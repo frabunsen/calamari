@@ -1,2 +1,5 @@
 # calamari
-MIsc important stuff
+Misc but important stuff
+
+## AFMviewGUI
+MatLab GUI for AFM images
