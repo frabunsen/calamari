@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% F.Sensi Curriculum/resume (zclass.cls)
+% Curriculum/resume (zclass.cls)
 % LaTeX Template
 %
 % Main version
@@ -63,7 +63,7 @@
 %\ifdefined\@cv@eng
 \RequirePackage[british]{babel}
 %\else
-%\RequirePackage[italian]{babel}
+%\RequirePackage[anotherlanguage]{babel}
 %\fi
 
 
