@@ -1,0 +1,215 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Curriculum/resume (stripes.tex)
+% XeLaTeX Template
+%
+% Main version
+%
+% Original author:
+% frabunsen (frabunsen@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template has been inspired by https://s-media-cache-ak0.pinimg.com/originals/f8/95/77/f895773dce017bad934169f5479c4fde.jpg
+% This version of the template is designed to be compiled with xelatex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\documentclass[10pt,a4paper]{report}
+\usepackage{tikz,varwidth}
+\usetikzlibrary{positioning}
+
+
+%%%%%%%%%%
+% TWEAKS %
+%%%%%%%%%%
+\thispagestyle{empty}
+
+%%%%%%%%%%
+% COMMON %
+%%%%%%%%%%
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+
+%%%%%%%%%%
+% LINKS %
+%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,%=false
+    urlcolor={pgreen}, 
+    pdfborder={0 0 0},
+}
+
+
+%%%%%%%%%%%
+% SYMBOLS %
+%%%%%%%%%%%
+%http://tex.stackexchange.com/questions/190927/linkedin-logo-in-latex
+\usepackage{fontawesome}
+\usepackage{setspace}
+\newcommand\faSkype{{\FA\symbol{"F17E}}}
+
+\usepackage{wasysym}
+\usepackage{marvosym} 
+
+
+%%%%%%%%%%
+% COLORS %
+%%%%%%%%%%
+\definecolor{gold}{rgb}{0.5,0.5,0.3}
+\definecolor{ggray}{HTML}{D7E1E1}% bg color 
+\definecolor{pgreen}{HTML}{298a8a}% link color
+   
+%%%%%%%%%%%%%%
+% PARAGRAPHS %
+%%%%%%%%%%%%%%
+
+\newcommand{\portionheader}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+   \node [rectangle, fill=ggray, anchor=north, minimum width=\paperwidth, minimum height=5cm, text centered, align=left, inner ysep=.8cm] 
+   (header) at (current page.north){};
+
+	 \node[above=0.75cm of header.center] (name) {
+		\LARGE{\textbf{#1}}
+	};
+	
+	\node[left=5.75cm of header.center] (pic)  {
+    		\includegraphics[draft]{picture}
+    }; 	
+     	
+	\node[below left=0.25cm and -5.5cm of name] (info) {
+		\small{\begin{tabular}{cl cl}
+			 \faHome & I live here & \faMobilePhone & 0000000 \\
+			 \faMailReply & \href{mailto:mail@mail}{\tt{mail@mail}} & \faPhone & 0000001 \\
+			 \faMailReplyAll & \href{mailto:mail2@mail}{\tt{mail2@mail}} & \faSkype & skype \\
+			 \faLinkedinSign & linkedin & & \\ % \fraMendeley & francescosensi
+        \end{tabular}}
+	};
+
+	\node [below right=0.5cm and 7.5cm of header.center, label={[align=right]
+	\footnotesize\textit{First}\\
+	\footnotesize\textit{Second}\\
+	\footnotesize{--anonymous}}
+	] (phrase) {};
+
+
+ \end{tikzpicture}
+ \noindent
+}
+        
+\newcommand{\portion}[4]{% color, sec. name, previous sec., text
+\begin{tikzpicture}[remember picture,overlay]
+\node [rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=5cm, text centered, align=left, inner ysep=.8cm] (#2) at (#3.south){
+	\begin{varwidth}{18cm} 
+		\begin{minipage}[t!]{0.2\textwidth}
+			\begin{tikzpicture}
+				\foreach \x in {0} 
+					  \draw [black, thick, fill=black] (\x,0) circle (1);
+			    \foreach \x in {0} 
+					  \draw [white, thick] (\x,0) circle (0.95);
+			    \node[white,overlay] at (0,2.5) {\scriptsize{\textbf{#2}}};
+			\end{tikzpicture}
+		\end{minipage}
+	\begin{minipage}[t!]{0.8\textwidth}
+		#4
+	\end{minipage}        
+	\end{varwidth}
+};
+\end{tikzpicture}
+\noindent
+}       
+        
+\newcommand{\portionsimple}[4]{% ccolor, sec. name, previous sec., text
+\begin{tikzpicture}[remember picture,overlay]
+\node [rectangle, fill=#1, anchor=north, minimum width=\paperwidth, minimum height=2cm, text centered, align=left, inner ysep=.8cm] (#2) at (#3.south){
+	\begin{varwidth}{18cm} 		#4	\end{varwidth} };
+\end{tikzpicture}
+\noindent
+}      
+ 
+%USAGE
+%\portionsimple{gray!25}{courses}{skill}{\lipsum[1]}
+% [draw] adds a black border nero to sections
+   
+%%%%%%%%%%%%%%%%%
+% POINT ABILITY %
+%%%%%%%%%%%%%%%%%
+
+\def\zeropt{\parbox{1.7cm}{\Large$\circ\circ\circ\circ\circ$}}
+\def\onept{\parbox{1.7cm}{\Large$\bullet\circ\circ\circ\circ$}}
+\def\twopt{\parbox{1.7cm}{\Large$\bullet\bullet\circ\circ\circ$}}
+\def\threept{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\circ\circ$}}
+\def\fourpt{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\bullet\circ$}}
+\def\fivept{\parbox{1.7cm}{\Large$\bullet\bullet\bullet\bullet\bullet$}}
+    
+  
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 														BEGIN DOCUMENT 																		%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\portionheader{NAME SURNAME}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EDUCATION
+\portion{white}{education}{header}{
+{When} \quad (Site) {What}, \href{url}{\bf a link}\\
+{When} \quad (Site) {What}, \href{url}{\bf another link}\\
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXPERIENCE
+\portion{ggray}{experience}{education}{
+
+\begin{tabular}{ll}
+{When} & \textcolor{pgreen}{\bf Where}  What\\
+{When} & \textcolor{pgreen}{\bf Where}  What
+\end{tabular}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SKILL
+\portion{white}{skills}{experience}{
+
+\hspace{-1cm}
+\begin{tabular}{llll}	
+\multirow{4}{*}{Social} & blah \fivept & blah \fourpt\\ & blah \fourpt\\ 
+			& blah \fivept & blah \threept & blah \twopt \\ 
+			& blah \fivept & blah \onept & \\ 
+			& blah \fivept & & \\
+			& & & \\
+Language		& Elvish \fivept & Draconic \threept & \\
+
+\end{tabular}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MISCELLANEA
+\portion{ggray}{proud of}{skills}{
+
+\begin{tabular}{ll}
+\multirow{2}{*}{Award \& Prizes}  & When, What \\
+								 & When, What \\
+								 & \\
+Achievements						& When, What \\
+\end{tabular}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ENDNOTES
+\portion{white}{notes}{proud of}{
+blah
+}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 														END DOCUMENT 																		%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
