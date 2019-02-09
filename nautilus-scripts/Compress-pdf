@@ -4,12 +4,11 @@ for arg do
  if [[ ${arg##*.} == "pdf"  ]]; then
   BASE="${arg%.*}"
   gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg
-  #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg
-  #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg
-  #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/print -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg
-  #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg
-  #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dDownsampleColorImages=true -dColorImageResolution=150 -dNOPAUSE  -dBATCH -sOutputFile=${BASE}-reduced.pdf $arg ##(doesnt rasterize text)
-  #convert -density 200x200 -quality 60 -compress jpeg $arg ${BASE}-reduced.pdf ##(per scansioni) #-resize 50.0%
+  # 	-dPDFSETTINGS: ebook, screen, print, default  
+  # 	-dColorImageResolution: 150
+  #
+  # Alternatively: 
+  # convert -density 200x200 -quality 60 -compress jpeg $arg ${BASE}-reduced.pdf ##(per scansioni) #-resize 50.0%
  else
   zenity --info --text="Not a PDFfile\nIgnoring it.." 
  fi
