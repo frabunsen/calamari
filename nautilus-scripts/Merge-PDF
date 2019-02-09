@@ -1,0 +1,7 @@
+#!/bin/bash
+
+LIST=""
+for arg do
+ LIST=$(echo "$LIST $arg")
+done
+pdftk $LIST cat output MERGEDPDF.pdf

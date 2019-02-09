@@ -1,0 +1,19 @@
+#!/bin/bash
+
+for arg do
+ if [ -f "$arg" ]; then
+  case "$arg" in
+   *.out | *.aux | *.log | *.synctex.gz ) rm $arg ;;
+   *.blg | *.bbl ) rm $arg ;;
+   *.toc | *.tdo ) rm $arg ;;
+   *.lof | *.lot ) rm $arg ;;
+   *.toc | *.tdo ) rm $arg ;;
+   *.idx | *.ptc ) rm $arg ;;
+   *.ind | *.ilg ) rm $arg ;;
+   *.brf ) rm $arg ;;
+   *) zenity --info --text="Not LATEX dirt file\nIgnoring it.." ;;
+  esac
+ else
+  zenity --info --text="Not a File\nIgnoring it.."	
+ fi
+done

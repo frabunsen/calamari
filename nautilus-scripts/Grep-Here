@@ -1,0 +1,10 @@
+#!/bin/bash
+
+GREP=$(zenity --entry --title="Grep string");
+if [[ -n $GREP  ]]; then
+ for arg do
+  grep -rn $GREP $arg/* | zenity --text-info --height=500 --width=400 --title=$arg
+ done 
+fi
+exit
+

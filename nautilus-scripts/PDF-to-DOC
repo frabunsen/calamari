@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for arg do
+ ext=${arg##*.}
+ if [[ $ext == "pdf" ]]; then
+  abiword --to=doc $arg
+ else
+  zenity --info --text="Not a PDF\nIgnoring it.."	
+fi
+done		 

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Need convert command (sudo apt-get install imagemagick)
+
+IFS=$'\n'
+for picture in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS; do
+ png_file=`echo "$picture" | sed 's/\.\w*$/.png/'`
+ /usr/bin/convert "$picture" png:"$png_file"
+done

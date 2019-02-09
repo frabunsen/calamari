@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for arg do
+ ffmpeg -i "$arg" -vn -c:a libmp3lame -y "${arg%.*}.mp3" 
+ rm $arg
+done		 

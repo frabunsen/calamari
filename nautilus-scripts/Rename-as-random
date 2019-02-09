@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for arg do
+ EXT="${arg##*.}"
+ EXTUP=$(echo ${EXT} | tr [:lower:] [:upper:]);
+ RNA=$(cat /dev/urandom | tr -cd 'a-zA-Z0-9' | head -c 12);
+ mv "$arg" "${EXTUP}-${RNA}.$EXT"
+done
+
+exit

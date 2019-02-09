@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for arg do
+ SIZ=$(zenity --entry --title="Name size");
+ SIZ=${SIZ:-10}
+ EXT="."${arg##*.}
+ [[ ${EXT} == "."${arg} ]] && EXT=""
+ PTH=$(dirname ${arg})
+ BNA=$(basename ${arg%.*})
+ SNA=${BNA::${SIZ}}
+ mv "$arg" "${PTH}/${SNA}${EXT}"
+done
+
+exit

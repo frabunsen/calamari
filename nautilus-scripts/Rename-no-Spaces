@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for arg do
+ NOME="${arg//\ /-}"
+ NOME="${NOME//_/-}"
+ NOME=$(echo $NOME | tr -cd 'A-Za-z0-9/.-');
+ mv "$arg" "${NOME}"
+done

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for arg do
+ if [[ ${arg##*.} == "sh" ]]; then
+  KEY=$(zenity --entry --title="MCRYPT" --text="Enter a key:")
+  echo '. <(echo "$(tail -n+2 $0|base64 -d|mcrypt -dq)"); exit;' > $arg.scrypt;
+  cat $arg | mcrypt -k "$KEY" | base64 >> $arg.scrypt;
+  chmod +x $arg.scrypt
+ fi 
+done
