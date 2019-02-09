@@ -10,15 +10,10 @@ import sys
 import glob
 import pyperclip
 from fpdf import FPDF
-
-
 NAME = "~/OUTPDF-"
-
 pdfs = glob.glob(NAME + "*.pdf")
 num = len(pdfs) + 1
-
 OUTPDF = "".join([NAME,str(num),".pdf"])
-
 pdf = FPDF()
 pdf.add_page()
 pdf.set_xy(0, 0)
