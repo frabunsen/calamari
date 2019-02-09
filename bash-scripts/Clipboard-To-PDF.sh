@@ -12,7 +12,7 @@ import pyperclip
 from fpdf import FPDF
 
 
-NAME = "/home/sensi/OUTPDF-"
+NAME = "~/OUTPDF-"
 
 pdfs = glob.glob(NAME + "*.pdf")
 num = len(pdfs) + 1
