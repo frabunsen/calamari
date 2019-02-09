@@ -18,6 +18,6 @@ Miscellaneous shell scripts for medical images processing
 
 ## nautilus-scripts
 Miscellaneous shell scripts right at finger tips
+- [ ] `$ chmod +x script.sh`
 - [ ] `cp script.sh ~/.local/share/nautilus/scripts/` (Ubuntu 16.04)
-- [ ] `$ chmod +x`
 - [ ] In nautilus: right click > Scripts > script
