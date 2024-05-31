@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Create GIMP script according to: https://www.gimp-forum.net/Thread-Run-batch-command-line-in-Fu-console-beginning-with-gimp?pid=31271#pid31271
+# Put it & chmod +x it into /home/sensi/.config/GIMP/2.10/scripts or other folder as defined by GIMP > Edit > Preferences > Folders > Scripts
+ 
+for arg do
+    identify $arg
+	if [ "$?" -eq 0 ]; then
+        gimp  -i -b '(batch-crop-to-content "$arg" )' -b '(gimp-quit 0)'  
+	else
+		# If not img
+		zenity --info --text="Not an image\nIgnoring it.."
+	fi
+done

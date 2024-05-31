@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for arg do
+	if [ -d "$arg" ]; then
+		dcm2nii $arg
+		#/home/sensi/fra@09/exe/importImageEADC $arg 1
+		#/home/sensi/fra@09/exe/DicomConverter $arg 1
+		#
+	else
+		zenity --info --text="Not a Folder\nIgnoring it.."	
+	fi
+done		 

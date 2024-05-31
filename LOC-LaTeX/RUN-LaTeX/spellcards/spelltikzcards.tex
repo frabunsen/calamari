@@ -1,0 +1,256 @@
+%   COMMANDS ZUM ZUSAMMENBAUEN DER KARTEN
+%   ---------------------------------------
+
+
+%%%%%%%%%%%%%%%%
+% COLORICARTA  %
+%%%%%%%%%%%%%%%%
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{contentbg}{RGB}{255,255,255}
+\definecolor{pricebg}{RGB}{255,203,0}
+
+
+%%%%%%%%%%%%%%%
+% COLORIRUNE  %
+%%%%%%%%%%%%%%%
+\definecolor{abiurationrgb}{HTML}{7F3654}
+\definecolor{conjurationrgb}{HTML}{547F36}
+\definecolor{divinationrgb}{HTML}{54367F}
+\definecolor{enchantmentrgb}{HTML}{367F54}
+\definecolor{evocationrgb}{HTML}{7F5436}
+\definecolor{illusionrgb}{HTML}{36547F}
+\definecolor{necromancyrgb}{HTML}{000000}
+\definecolor{transmutationrgb}{HTML}{990000}
+
+
+%%%%%%%%%%%%%
+% DINGRUNE  %
+%%%%%%%%%%%%%
+\newcommand{\base}{\ding{108}}
+\newcommand{\sublime}{\ding{98}}
+\newcommand{\upgrade}{\ding{164}}
+
+%%%%%%%%%%%%%
+% MOTECOST  %
+%%%%%%%%%%%%%
+\newcommand{\onemote}{\ding{202}}
+\newcommand{\twomote}{\ding{203}}
+\newcommand{\threemote}{\ding{204}}
+\newcommand{\fourmote}{\ding{205}}
+%\newcommand{\xmote}{\raisebox{.5pt}{\textcircled{\raisebox{-.9pt}{\small{\textbf{X}}}}}}
+%\newcommand{\xmote}{{\large \textcircled{\small{X}}}}
+\newcommand{\xmote}{\textcircled{\small{X}}}
+
+%%%%%%%%%%%%%
+% INTERLINE %
+%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\baselinestretch}{.5} 
+%%USAGE: {\setstretch{1.0} \scriptsize{#1}}
+
+
+% TikZ/PGF Settings für die Karten
+\pgfmathsetmacro{\cardwidth}{9} %%Original dimesniion is 6x9. This is still achievable, given you set only 1 line of content
+\pgfmathsetmacro{\cardheight}{12}
+\pgfmathsetmacro{\imagewidth}{\cardwidth}
+\pgfmathsetmacro{\imageheight}{0.75*\cardheight}
+\pgfmathsetmacro{\stripwidth}{0.7}
+\pgfmathsetmacro{\strippadding}{0.2}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\titley}{\cardheight-\strippadding-1.5*\textpadding-0.5*\stripwidth}
+
+
+%   Formen der einzelnen Kartenelemente/-bestandteile
+\def\shapeCard{(0,0) rectangle (\cardwidth,\cardheight)}
+\def\shapeLeftStripLong{(\strippadding,-0.2) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding-\strippadding-1)}
+\def\shapeLeftStripShort{(\strippadding,\cardheight-\strippadding-1) rectangle (\strippadding+\stripwidth,\cardheight+0.2)}
+\def\shapeRightStripShort{(\cardwidth-\stripwidth-\strippadding,\cardheight-\strippadding-1) rectangle (\cardwidth-\strippadding,\cardheight+0.2)}
+\def\shapeTitleArea{(2*\strippadding+\stripwidth,\cardheight-\strippadding) rectangle (\cardwidth-2*\strippadding-\stripwidth,\cardheight-2*\stripwidth)}
+\def\shapeContentArea{(2*\strippadding+\stripwidth,0.5*\cardheight) rectangle (\cardwidth+0.2,-0.2)}
+\def\shapeContentAreaGlog{(2*\strippadding+\stripwidth,0.75*\cardheight) rectangle (\cardwidth+0.2,-0.2)}
+
+%   Stylings für die Elemente definieren
+\tikzset{
+    %   runde Ecken für die Karten
+    cardcorners/.style={
+        rounded corners=0.2cm
+    },
+    %   runde Ecken für die "Fähnchen"
+    elementcorners/.style={
+        rounded corners=0.1cm
+    },
+    %   Schlagschatten für die "Fähnchen"
+    stripshadow/.style={
+        drop shadow={
+        	%shadow=true,
+            opacity=0.5,
+            color=black
+        }
+    },
+    %   Style für die "Fähnchen"
+    strip/.style={
+        elementcorners,
+        stripshadow
+    },
+    %   Bild für das Kartenmotiv
+    cardimage/.style={
+        path picture={
+            \node[below=-1.5mm] at (0.5*\cardwidth,\cardheight) {
+                \includegraphics[width=\imagewidth cm]{#1}
+            };
+        }
+    },
+}
+
+%   TikZ-Raster
+\newcommand{\carddebug}{padding
+    \draw [step=1,help lines] (0,0) grid (\cardwidth,\cardheight);
+}
+
+%   Rahmen der Karte
+\newcommand{\cardborder}{
+    \draw[lightgray,cardcorners] \shapeCard;
+}
+
+%   Hintergrund der KarteTest
+\newcommand{\cardbackground}[1]{
+    \draw[cardcorners, cardimage=#1] \shapeCard;
+}
+
+%   Kategorie der Karte
+\newcommand{\cardtype}[5]{
+    %   First we fill the intersecting area
+    %   The \clip command does not allow options, therefore 
+    %   we have to use a scope to set th-0.2e even odd rule.
+    \begin{scope}[even odd rule]
+        %   Define a clipping path. All paths outside shapeCard will
+        %   be cut because the even odd rule is set.
+        \clip[cardcorners] \shapeCard;
+        % Fill shapeLeftStripLong and shapeLeftStripShort.
+        %   Since the even odd rule is set, only the card will be filled.
+        \fill[strip,#1] \shapeLeftStripLong node[rotate=90,above left=0.9mm,font=\normalsize] {
+            \color{white}\uppercase{#2}
+        };
+        \fill[strip,#1] \shapeLeftStripShort;
+        
+            
+%    %%%%%%%%%%%%%% OPZIONALE: secondo cardtype 
+    \ifthenelse{\equal{#4}{}}{}{
+\def\shapeLeftStripMedium{(\strippadding,-0.2) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding-\strippadding-4)}        
+        \fill[strip,#4] \shapeLeftStripMedium node[rotate=90,above left=0.9mm,font=\normalsize] {
+            \color{white}\uppercase{#5}
+        };
+      }
+     %%%%%%%%%%%% FINE OPZIONALE: secondo cardtype 
+    \end{scope}
+    \node at (\strippadding+\stripwidth-0.28,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
+}
+
+
+
+%%%%%%%%%%%%%%%%
+% COMMANDRUNE  %
+%%%%%%%%%%%%%%%%
+\newcommand{\cardtypeAbjuration}[1]{\cardtype{abiurationrgb}{Abiurazione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeConjuration}[1]{\cardtype{conjurationrgb}{Evocazione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeDivination}[1]{\cardtype{divinationrgb}{Divinazione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeEnchantment}[1]{\cardtype{enchantmentrgb}{Incantamento}{\hspace{-1mm}\\LARGE{#1}}{}{}}
+\newcommand{\cardtypeEvocation}[1]{\cardtype{evocationrgb}{Invocazione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeIllusion}[1]{\cardtype{illusionrgb}{Illusione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeNecromancy}[1]{\cardtype{necromancyrgb}{Necromanzia}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeTransmutation}[1]{\cardtype{transmutationrgb}{Trasmutazione}{\hspace{-1mm}\LARGE{#1}}{}{}}
+
+\newcommand{\cardtypeOrthodox}[1]{\cardtype{abiurationrgb}{Mago di Gilda}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeRedHand}[1]{\cardtype{evocationrgb}{Mago della Mano Rossa}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeCleric}[1]{\cardtype{divinationrgb}{Chierico}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeSword}[1]{\cardtype{conjurationrgb}{Mago delle Lame}{\hspace{-1mm}\LARGE{#1}}{}{}}
+\newcommand{\cardtypeCulinary}[1]{\cardtype{illusionrgb}{Mago delle Lame}{\hspace{-1mm}\LARGE{#1}}{}{}}
+
+%   Titel der Karte
+\newcommand{\cardtitle}[1]{
+    %\draw[pattern=soft crosshatch,rounded corners=0.1cm] \shapeTitleArea;
+    \fill[elementcorners,titlebg,opacity=.85] \shapeTitleArea;
+    \node[text width=3.75cm] at (0.5*\cardwidth,\titley) {
+        \begin{center}
+            \color{white}\uppercase{\normalsize #1}
+        \end{center}
+    };
+}
+
+%   Inhalt der Karte
+\newcommand*{\cardcontent}[8]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[elementcorners,contentbg, opacity=0.7] \shapeContentArea;
+    \end{scope}
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] (A) at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding) {
+        \begin{center}\small{
+        \textbf{Tempo di Lancio}: {#1}\\
+     	\textbf{Gittata}: {#2}\\
+        \textbf{Componenti}: {#3}\\
+        \textbf{Durata}: {#4}\\
+        \textbf{Classi}: {#5}\\
+        }
+        \end{center}
+        \vrule width \textwidth height 2pt \\[-2pt]\vspace{10pt}
+        {#6}\\ \vspace{10pt}
+        \ifthenelse{\equal{#7}{}}{}{\textbf{Ai Livelli Superiori}: {#7}\\}
+    };
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at 
+    (2*\strippadding+\stripwidth+\textpadding,2) {
+        \vrule width \textwidth height 2pt \\[-2pt] %% aggiunge un riga orizzontale spessa 2pt (col suo VSPACE	)
+        \vspace{0.2cm}
+        {\textit{\small{#8}}}
+    };
+}
+
+\newcommand*{\cardcontentglog}[4]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[elementcorners,contentbg, opacity=0.5] \shapeContentAreaGlog;
+    \end{scope}
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] (A) at (2*\strippadding+\stripwidth+\textpadding,0.75*\cardheight-\textpadding) {
+        \begin{center}
+        \small{
+        	\textbf{R}: {#1}\\
+     		\textbf{T}: {#2}\\
+        	\textbf{D}: {#3}
+        }
+        \end{center}
+        \vrule width \textwidth height 1pt \vspace{3pt}
+        \small{#4}
+    };
+}
+
+
+%   Preis der Karte
+\newcommand{\cardprice}[1]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[strip,pricebg] \shapeRightStripShort;
+    \end{scope}
+    \node at (\cardwidth-0.5*\stripwidth-\strippadding,\titley-0.1) {\color{black} \textbf{#1}};
+}
+
+
+%%%\def\shapeMiaVerticale{(\cardwidth-\strippadding,-0.2) rectangle (\cardwidth-\strippadding-\stripwidth,\cardheight-\imageheight-5*\strippadding)}
+%%%%	Card strenght/defence
+%%%\newcommand{\cardpower}[1]{
+%%%    \begin{scope}[even odd rule]
+%%%        \clip[cardcorners] \shapeCard;
+%%%        \fill[strip,pricebg] \shapeMia;
+%%%    \end{scope}
+%%%   \node at (\cardwidth-0.5*\stripwidth-\strippadding,\cardheight-\titley-0.1) {\color{black} #1};
+%%%}
+
+
+\def\shapeMia{(\cardwidth-2*\stripwidth,\strippadding+\stripwidth) rectangle (\cardwidth+0.2,1.5*\strippadding)}
+%	Card strenght/defence
+\newcommand{\cardpower}[1]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[strip,powerbg,opacity=1] \shapeMia;
+    \end{scope}
+    \node at (\cardwidth-0.6*\stripwidth-\strippadding,\cardheight-\titley-0.1) {\color{white} \textbf{#1}};
+}
+

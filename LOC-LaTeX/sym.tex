@@ -1,0 +1,146 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[parskip]{scrartcl}
+\usepackage[margin=15mm]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{tikz}
+\usepackage{pifont} 
+\usepackage[utf8]{inputenc}
+\usepackage[11pt]{moresize}
+\usepackage{mathptmx}
+\usepackage{yfonts}%\usepackage{anttor}
+\usetikzlibrary{shapes.geometric}
+\pagenumbering{gobble}
+
+% XELATEX way to use any font installed
+%\usepackage{xltxtra,fontspec,xunicode}
+%\defaultfontfeatures{Scale=MatchLowercase}
+%\setromanfont[Numbers=Uppercase]{SymbaroumText_Bold}
+%\setmonofont[Scale=0.90,Ligatures=NoCommon]{Amelia Pond}
+
+
+
+\definecolor{abi}{HTML}{480606}
+\definecolor{tra}{HTML}{472706}
+\definecolor{pot}{HTML}{473D42}
+\definecolor{mon}{HTML}{000000}
+
+
+\begin{document}
+\pgfmathsetmacro{\cardwidth}{9}
+\pgfmathsetmacro{\cardheight}{6}
+\pgfmathsetmacro{\stripwidth}{0.55}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\ruleheight}{0.1}
+
+% BEGIN PAGE
+%% BEGIN ROW
+%%% BEGIN CARD
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=0.75}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/z.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\fill[abi,rounded corners=0.1cm] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90, above left, white] 
+	{\textswab{Parry Master} \hfill};   %\rotatebox[origin=c]{-90}{\ding{202}} };
+\node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding-0.3)*1cm, below right, white] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) {		
+    {\ssmall\em You use your weapon for finest defences\\}											\vspace{-5pt}
+    																								\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{abi}\textswab{P.}} You can precisely hit and deflect incoming attacks in close combat. The character may use Accurate as their basis for Defense in melee, as long as they are holding a melee weapon or have the Natural Warrior ability.\\}
+  																									\vrule width \textwidth height 1pt\\
+    {\ssmall {\color{abi}\textswab{R.}} You follow you parry with a twisting move designed to liberate their opponent of their weapon. After a successful Defense in melee, the character can roll [Accurate $\triangleleft$ Strong] to disarm their opponent).\\}   
+   																									\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{abi}\textswab{P.}} You display an almost preternatural ability to ward off danger with their weapon. The character may use Accurate for Defense even against ranged attacks, as long as they are holding a melee weapon. If combined with Natural Warrior you can catch missiles. \\}   
+\vfill};
+\end{tikzpicture}
+% END CARD
+\vspace{0pt}
+% BEGIN CARD
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=0.75}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/zz.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\fill[pot,rounded corners=0.1cm] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90, above left, white] 
+	{\textswab{Harsh Rebuke} \hfill};
+\node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding-0.3)*1cm, below right, white] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) {		
+    {\ssmall\em Words can have as much impact as a strike upon the cheek or a whack upon the shield. The techniques of the seasoned wordsmith can leave those unprepared faltering and in doubt.\\}											\vspace{-5pt}
+    																								\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{pot}\textswab{P.}} You have a second chance to succeed in social challenges and encounters; your careful use of words leaves those listening doubting themselves rather than the words they're hearing.\\}
+  																									\vrule width \textwidth height 1pt\\
+    {\ssmall {\color{pot}\textswab{R.}} In the situation of social challenge, you use strong language or words intended to shock and wrong foot. If you succeed with a [Persuasive $\triangleleft$ Resolute] test, the target is unable to take an action in their following turn unless their life depends on it -- in which case they can defend themselves.\\}   
+   																									\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{pot}\textswab{A.}} In the realms of verbal pugilism, you hold yours own, pummelling their social opposition with relentless invective. If you succed with a [Persuasive $\triangleleft$ Resolute] test, the target loses a point of Resolute (similarly to \textit{Alternative Damage} trait).\\}   
+\vfill};
+\end{tikzpicture}
+%%% END CARD
+%% END ROW
+\\
+%%% BEGIN CARD
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/za.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\fill[tra,rounded corners=0.1cm] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90, above left, black] 
+	{\textswab{Parry Master} \hfill};
+\node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding-0.3)*1cm, below right, black] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) {		
+    {\ssmall\em You use your weapon for finest defences\\}											\vspace{-5pt}
+    																								\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{tra}\textswab{P.}} You can precisely hit and deflect incoming attacks in close combat. The character may use Accurate as their basis for Defense in melee, as long as they are holding a melee weapon or have the Natural Warrior ability.\\}
+  																									\vrule width \textwidth height 1pt\\
+    {\ssmall {\color{tra}\textswab{R.}} You follow you parry with a twisting move designed to liberate their opponent of their weapon. After a successful Defense in melee, the character can roll [Accurate $\triangleleft$ Strong] to disarm their opponent).\\}   
+   																									\vrule width \textwidth height 1pt\\	
+    {\ssmall {\color{tra}\textswab{P.}} You display an almost preternatural ability to ward off danger with their weapon. The character may use Accurate for Defense even against ranged attacks, as long as they are holding a melee weapon. \\}   
+\vfill};
+\end{tikzpicture}
+% END CARD
+
+
+
+
+
+
+
+
+
+
+% END FRONT PAGE
+\newpage
+% BEGIN COVER PAGE
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\vspace{0pt}
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\vspace{0pt}
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\vspace{0pt}
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\\
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+\vspace{0pt}
+\begin{tikzpicture}
+[path image/.style={path picture={\node at (path picture bounding box.center) {\includegraphics{#1}};}, opacity=1}] 
+\draw[rounded corners=0.2cm, path image=/home/sensi/Downloads/cov.jpg] (0,0) rectangle (\cardwidth,\cardheight);
+\end{tikzpicture}
+
+\end{document}

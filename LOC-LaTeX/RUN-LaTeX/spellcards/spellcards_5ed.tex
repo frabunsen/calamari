@@ -1,0 +1,151 @@
+\documentclass[a4paper,landscape]{article}
+
+
+%%%%%%%%%%%%%%%
+% GEOMETRIA	  %
+%%%%%%%%%%%%%%%
+\usepackage[margin=6mm,top=5mm]{geometry}
+
+%%%%%%%%%%%%%%%
+% LINGUA	  %
+%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+%\usepackage[italian]{babel}
+
+%%%%%%%%%
+% TESTO	%
+%%%%%%%%%
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%%%%%%%
+% TIKZ	%
+%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+
+%%%%%%%%%
+% TWEAK %
+%%%%%%%%%
+\hyphenation{Alternately}
+
+
+\usepackage{ifthen}
+
+%%%%%%%%%
+% DING	%
+%%%%%%%%%
+\usepackage{pifont}
+% \ding{33} damage
+% \ding{85}
+% \ding{170} healing
+% \ding{64}
+% \ding{101}
+% \ding{95}
+% \ding{67}
+% \ding{108}
+
+
+\input{spelltikzcards.tex}
+
+\begin{document}
+
+\begin{center}
+    \pagestyle{empty}
+
+    \begin{tikzpicture}
+        \cardbackground{dardoincantato}
+        \cardtypeEvocation{\ding{33}}
+        \cardtitle{Dardo Incantato}
+        \cardcontent
+		{1 azione}
+        {36 metri}
+        {V S}
+        {Istantaneo}
+        {Mago, Stregone}
+        {Crei 3 dardi luminosi di forza magica. Ciascun dardo colpisce una creatura che puoi vedere. Un dardo infligge 1d4+1 
+        danni da forza al suo bersaglio. I dardi colpiscono tutti simultaneamente, e li puoi dirigere perché colpiscano una 
+        creatura o più creature.}
+        {Quando lanci questo incantesimo usando uno slot incantesimo di 2' livello o più alto, l’incantesimo crea un dardo 
+        aggiuntivo per ogni livello dello slot sopra il 1'.}
+        {Uno a te, uno a te..e uno a te!\begin{flushright}--Orem Crest, Mago mezz'elfo\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{curaferite}
+        \cardtypeEvocation{\ding{170}}
+        \cardtitle{Cura Ferite}
+        \cardcontent
+		{1 azione}
+        {Contatto}
+        {V S}
+        {Istantaneo}
+        {Bardo, Chierico, Druido, Paladino, Ranger}
+        {Una creatura a contatto con te recupera un numero di punti ferita uguale a 1d8+1 il tuo modificatore di 
+        Caratteristica da incantatore. Questo incantesimo non ha effetto su non morti e costrutti.}
+        {Quando esegui questo incantesimo usando uno slot incantesimo di 2' livello o più alto, la cura incrementa di 1d8 per 
+        ogni livello dello slot sopra il 1'.}
+        {Per il potere di Prios!\begin{flushright}--Dela Sirikit, Chierca umana\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{scudo}
+        \cardtypeAbjuration{\ding{108}}
+        \cardtitle{Scudo}
+        \cardcontent
+		{1 reazione, che effettui quando sei colpito da un attacco o bersagliato da un \textit{Dardo Incantato}}
+        {Personale}
+        {V S}
+        {1 Round}
+        {Mago, Strgone}
+        {Compare una barriera di forza magica invisibile a proteggerti. Fino all'inizio del tuo prossimo turno hai un bonus 
+        di +5 alla CA, compreso l’attacco innescante, e non subisci danni da \textit{Dardo Incantato}.}
+        {}
+        {Tenta il tiro: non va\begin{flushright}--Irenicus, Mago umano\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{manibrucianti}
+        \cardtypeEvocation{\ding{33}}
+        \cardtitle{Mani Brucianti}
+        \cardcontent
+		{1 azione}
+        {Personale, Cono di 4.5m}
+        {V S}
+        {Istantaneo}
+        {Mago, Stregone}
+        {Ogni creatura nel cono deve effettuare un TS su DES. Una creatura subisce 3d6 danni da fuoco se fallisce il tiro 
+        salvezza, o la metà se lo supera. Il fuoco incendia gli oggetti infiammabili nell'area che non siano indossati o  
+        trasportati.}
+        {Quando esegui questo incantesimo usando uno slot incantesimo di 2' livello o più alto, il danno incrementa di 1d6 
+        per ogni livello dello slot sopra il 1'.}
+        {Tenta il tiro: non va\begin{flushright}--Irenicus, Mago umano\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{parvenzadivita}
+        \cardtypeNecromancy{\ding{170}}
+        \cardtitle{Parvenza di Vita}
+        \cardcontent
+		{1 azione}
+        {Personale}
+        {V S M (un piccolo ammontare di alcool o spirito distillato)}
+        {1 Ora}
+        {Mago, Stregone}
+        {Potenziandoti con una parvenza negromantica di vitalità, ottieni 1d4+4 punti ferita temporanei per la durata 
+        dell'incantesimo.}
+        {Quando esegui questo incantesimo usando uno slot incantesimo di 2' livello o più alto, ottieni 5 punti ferita 
+        temporanei aggiuntivi per ogni livello dello slot sopra il 1'.}
+        {Tenta il tiro: non va\begin{flushright}--Irenicus, Mago umano\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture} 
+
+\end{center}
+\end{document}

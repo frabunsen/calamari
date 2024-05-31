@@ -1,0 +1,427 @@
+%\documentclass[a4paper,landscape]{article}
+\documentclass[a4paper]{article}
+
+
+%%%%%%%%%%%%%%%
+% GEOMETRIA	  %
+%%%%%%%%%%%%%%%
+\usepackage[margin=6mm,top=5mm]{geometry}
+
+%%%%%%%%%%%%%%%
+% LINGUA	  %
+%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+%\usepackage[italian]{babel}
+
+%%%%%%%%%
+% TESTO	%
+%%%%%%%%%
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%%%%%%%
+% TIKZ	%
+%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+
+%%%%%%%%%
+% TWEAK %
+%%%%%%%%%
+\hyphenation{Alternately}
+
+
+\usepackage{ifthen}
+
+%%%%%%%%%
+% DING	%
+%%%%%%%%%
+\usepackage{pifont}
+% \ding{33} damage
+% \ding{85}
+% \ding{170} healing
+% \ding{64}
+% \ding{101}
+% \ding{95}
+% \ding{67}
+% \ding{108}
+
+
+\input{spelltikzcards.tex}
+
+\begin{document}
+
+\begin{center}
+    \pagestyle{empty}
+
+    \begin{tikzpicture}
+        \cardbackground{lock}
+        \cardtypeOrthodox{1}
+        \cardtitle{Chiudi}
+        \cardcontentglog
+		{18m}
+        {[dadi] creature o oggetti}
+        {10 minuti}
+        {Il bersaglio si chiude e blocca. Porte o casse si chiuderanno sbattendo per [somma] danni alle creature incastrate. Alternativamente, n fodero potrebbe per es. trattenere una spada. Richiede Str 10 + [dadi]x4 per aprire. Può essere lanciato su un'orifizio di una creatura. La creatura riceve un TS per round.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{knock}
+        \cardtypeOrthodox{1}
+        \cardtitle{Apri}
+        \cardcontentglog
+		{18m}
+        {[dadi] oggetti}
+        {0}
+        {L'oggetto si apre.  Le porte vengono spalancate, le serrature rotte, le maniglie piegate e le cinture slacciate.  Equivale ad una prova di Forza con Str 10 + [dadi]x4.  Se il bersaglio è una creatura corazzata, TS o l'armatura cade.  Se il bersaglio è una creatura non corazzata, TS per non vomitare per 1d4 round.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{grease}
+        \cardtypeOrthodox{1}
+        \cardtitle{Unto}
+        \cardcontentglog
+		{18m}
+        {Un oggetto o superficie}
+        {[dadi]x2 round}
+        {Può essere lanciato direttamente su una creatura o su sueprfici di dimensione [somma]x(3m x 3m). Le creature che si muovono attraverso l'area devono superare un TS su Destrezza o far cadere oggetti trattenuti, o, se si muovono, cadere prone.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{scudo}
+        \cardtypeOrthodox{1}
+        \cardtitle{Scudo di Forza}
+        \cardcontentglog
+        {3m}
+        {Sfera o piano}
+        {Concentrazione}
+		{Crea un campo di forza scintillante, 3m x 3m, centrato fino a 3m di distanza.  In alternativa, creare una sfera centrata sulla rotella di 1.5m di diametro (abbastanza grande per la rotella e +1 persona).  Il campo di forza ha [somma] HP. Tutti gli attacchi contro di esso colpiscono.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{levitate}
+        \cardtypeOrthodox{1}
+        \cardtitle{Levitare}
+        \cardcontentglog
+        {18m}
+        {Creatura o oggetto}
+        {Concentrazione}
+		{È possibile sollevare, abbassare o far fluttuare il bersaglio.  Non è possibile spostare l'oggetto orizzontalmente e non si può spostare più di 3m per turno.  Il peso massimo è di [dadi]x225Kg.  Dura finché è mantenuta la concentrazione, ma si subiscono 1d6 danni psichici per turno dopo [dadi]x3 round.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{dardoincantato}
+        \cardtypeOrthodox{1}
+        \cardtitle{Dardo Incantato}
+        \cardcontentglog
+        {120m}
+        {Creatura}
+        {0}
+        {Il bersaglio subisce [somma] + [dadi] danni, senza TS. Come Mago Ortodosso, il tuo incantesimo porta la tua firma, e può essere di qualsiasi colore, forma o motivo a tua discrezione. }
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{featherfall}
+        \cardtypeOrthodox{1}
+        \cardtitle{Caduta morbida}
+        \cardcontentglog
+        {3m}
+        {Creatura o oggetti}
+        {0}
+		{Questo incantesimo può essere lanciato come reazione per evitare danni da caduta. Invece di precipitare il bersaglio galleggia dolcemente fino a terra.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{sleep}
+        \cardtypeOrthodox{1}
+        \cardtitle{Sonno}
+        \cardcontentglog
+        {18m}
+        {Creature fino a [somma] HD}
+        {10min}
+		{Il bersaglio non può essere svegliato da niente meno vigoroso di uno schiaffo.  Ai bersagli inconsapevoli non è concesso TS. Se [somma] è almeno 4 volte gli HD della creatura, la durata diventa permanente.  Se hai investito 3+ [dadi] puoi impostare l'unica condizione che causerà il risveglio della creatura.}
+        \cardborder
+    \end{tikzpicture}
+        \begin{tikzpicture}
+        \cardbackground{light}
+        \cardtypeOrthodox{1}
+        \cardtitle{Luce}
+        \cardcontentglog
+        {Contatto}
+        {Creatura o oggetti}
+        {[dadi]x2 ore}
+		{L'oggetto si illumina come una torcia, con un raggio di 9m+[dadi]x3m. In alternativa, si può portare un Attacco contro una creatura in  linea di vista. Essa viene accecata per [somma] round. Se [somma] è maggiore di 12, la creatura è accecata in modo permanente. Se si investono 4+ [dadi] questa luce ha tutte le qualità della luce solare naturale.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{wizardvision}
+        \cardtypeOrthodox{1}
+        \cardtitle{Vista stregata}
+        \cardcontentglog
+        {Contatto}
+        {Creatura in linea di vista / incantatore}
+        {10 min / permanente}
+		{1 [dado] investito: Il bersaglio può vedere cose invisibili o vedere attraverso le illusioni. Se si investono 2+ [dadi]: come sopra, tranne che si può vedere attraverso l'oscurità magica e vedere le vere forme dei mutaforma. Effetti permanenti: (a) puoi vedere cose invisibili con una leggera deformazione della luce. Si sa che "c'è qualcosa laggiù" e di che dimensione è all'incirca, ma nient'altro. (b) puoi capire se qualcun altro è un incantatore guardandolo negli occhi. Il prezzo di questo dono è la tua sanità mentale. Soffri di una perdita permanente di 1d6 Saggezza (quando rifiuti la vera natura della Creazione e impazzisci leggermente) o di 1d6 Carisma (quando accetti la vera natura della Creazione e ti allontani dai tuoi simili).}
+        \cardborder
+    \end{tikzpicture}
+        \begin{tikzpicture}
+        \cardbackground{prismaticspray}
+        \cardtypeOrthodox{*}
+        \cardtitle{Spruzzo prismatico}
+        \cardcontentglog
+        {60m}
+        {[dado] creature o oggett}
+        {0}
+		{Il bersaglio subisce un effetto diverso a seconda del colore che colpisce il bersaglio. Lanciare un d10. \\
+		1 (rosso) [somma] danni da fuoco, TS dimezza. \\
+		2 (arancione) [somma] danni contundenti ed e prono, TS nega.\\
+		3 (giallo) [somma] danni da fulmine, TS dimezza.\\
+		4 (verde) [somma] danni da acido, TS dimezza. \\
+		5 (blu) [somma] danni da freddo, TS dimezza.\\
+		6 (viola) [somma] danni necrotici ed è accecato per [somma] round, TS nega. \\
+		7, 8, 9. Compito 2 volte. Tira 1d6 2 volte e somma gli effetti, un solo TS. \\
+		10. Compito 3 volte. Tira 1d6 3 volte e somma gli effetti, un solo TS. }
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{fireball}
+        \cardtypeOrthodox{*}
+        \cardtitle{Palla di fuoco}
+        \cardcontentglog
+        {36m}
+        {Area di 6m di diametro}
+        {0}
+		{I bersagli all'interno dell'area subiscono [somma] danni da fuoco.}
+        \cardborder
+    \end{tikzpicture}
+    
+    
+    \begin{tikzpicture}
+        \cardbackground{bless}
+        \cardtypeCleric{1}
+        \cardtitle{Benedizione}
+        \cardcontentglog
+        {Contatto}
+        {Creatura o oggetto}
+		{[somma] round}
+		{Scegli un effetto per ogni [dado] investito: (a) Il bersaglio tratta tutti i fallimenti critici come successi critici per la durata dell'incantesimo, (b) Il bersaglio passa automaticamente il suo prossimo salvataggio (c) La creatura o l'oggetto conta come santo per la durata dell'incantesimo, (d) Il bersaglio ottiene un nuovo salvataggio contro qualsiasi effetto mentale in corso.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{curaferite}
+        \cardtypeCleric{1}
+        \cardtitle{Cura ferite}
+        \cardcontentglog
+        {Contatto}
+        {Creatura o creature}
+		{Concentrazione}
+		{Guarisci fino a [somma] PF di creature che tocchi. Puoi distribuire la guarigione tra tutte le creature che volete, purché il totale dei PF guariti non superi [somma] e manteniate la concentrazione. Se investi 4 [dadi] o più, puoi invece guarire completamente un singolo bersaglio. In alternativa, puoi scegliere di infliggere [somma] danno, distribuito tra le creature che toccate, purché tu mantenga la concentrazione, o investire 4 [dadi] per infliggere [somma] danno ad una creatura e costringerla a fare un TS o perdere un arto.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{light}
+        \cardtypeCleric{1}
+        \cardtitle{Luce}
+        \cardcontentglog
+        {Contatto}
+        {Creatura o oggetti}
+        {[dadi]x2 ore}
+		{L'oggetto si illumina come una torcia, con un raggio di 9m+[dadi]x3m. In alternativa, si può portare un Attacco contro una creatura in  linea di vista. Essa viene accecata per [somma] round. Se [somma] è maggiore di 12, la creatura è accecata in modo permanente. Se si investono 4+ [dadi] questa luce ha tutte le qualità della luce solare naturale.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{stickstosnakes}
+        \cardtypeCleric{1}
+        \cardtitle{Tramuta bastone}
+        \cardcontentglog
+        {Contatto}
+        {Oggetto}
+        {0}
+		{Il bastone bersaglio diventa un serpente. Il serpente non vi deve alcun favore. Ha 1 probabilità su 6 di essere velenoso (migliorata di +1 per ogni [dado] che investite oltre il primo). Il bastone deve essere abbastanza piccolo da poter essere sollevato con una mano sola.}
+        \cardborder
+    \end{tikzpicture}  
+     \begin{tikzpicture}
+        \cardbackground{banish}
+        \cardtypeCleric{1}
+        \cardtitle{Bandire}
+        \cardcontentglog
+        {Raggio [dadi]x3m}
+        {Area}
+        {Concetrazione}
+        {Dichiari una cosa o un tipo di creaura (i Non-morti, l'aria, il colore verde) come Abominio. Quella cosa non può entrare nell'area d'effetto (centrata sul caster). Gli Abominii già nell'area devono superare il TS o esserne spinti alle estremità.}
+        \cardborder
+    \end{tikzpicture}   
+    \begin{tikzpicture}
+        \cardbackground{speakdead}
+        \cardtypeCleric{1}
+        \cardtitle{Parlare con i Morti}
+        \cardcontentglog
+        {Contatto}
+        {Cadavere}
+        {[dadi] minuti}
+        {Puoi porre domande ad un cadavere con la maschella intatta. Le riposte del morto possono essere criptiche e poco utili (soprautto se no ha motivo di aiutarti). Puoi comunicare con lo stesso cadavere solo una volta.}
+        \cardborder
+    \end{tikzpicture} 
+     \begin{tikzpicture}
+        \cardbackground{voidscabbard}
+        \cardtypeSword{1}
+        \cardtitle{Fodero astrale}
+        \cardcontentglog
+        {Contatto}
+        {[dadi] armi}
+        {Permanente finchè non scaricato}
+        {Nascondi [dadi] armi nell'Oltremondo. Vi rimangono in stasi finchè non le richiamerai (una per volta  o tutte assieme) nella tua mano.}
+        \cardborder
+    \end{tikzpicture}   
+     \begin{tikzpicture}
+        \cardbackground{bladesofgrass}
+        \cardtypeSword{1}
+        \cardtitle{Lame d'erba}
+        \cardcontentglog
+        {Contatto}
+        {Object}
+        {[somma] minuti}
+        {Ogni oggetto che tocchi può tagliare (fili d'erba, unghie). L'oggetto incantato conta come una spada e fa danni in base ai [dadi] investiti: 1: 1d6, 2: 1d8, 3: 1d10, 4: 1d12}
+        \cardborder
+    \end{tikzpicture}        
+         \begin{tikzpicture}
+        \cardbackground{milletagli}
+        \cardtypeSword{1}
+        \cardtitle{Mille Tagli}
+        \cardcontentglog
+        {Mischia}
+        {Creature}
+        {0}
+        {Suddividi [somma] danni tra le creature bersaglio entro il raggio d'azione.}
+        \cardborder
+    \end{tikzpicture}
+  
+    
+    
+     
+    \begin{tikzpicture}
+        \cardbackground{inflictwound}
+        \cardtypeRedHand{1}
+        \cardtitle{Infliggi Ferite}
+        \cardcontentglog
+        {Contatto}
+        {Una creatura}
+        {0}
+		{Il bersaglio prende [somma] danni senza TS. Scegli anche [dadi] tra le seguenti opzioni:
+    (a) Se il danno riduce il bersaglio a 0 hp o meno, vengono istantaneamente uccisi.
+    (b) Il danno non può ridurre il bersaglio al di sotto di 0 hp, ma se raggiunge 0 hp, viene messo ko.
+    (c) Il tuo tocco lascia una cicatrice permanente, orribile e facilmente riconoscibile.
+    (d) Il tuo tocco lascia dietro di sé ferite aperte che non guariscono. Il bersaglio può guarire con riposo completo. Finché non riposa, non può in alcun modo riacquistare PF.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{vomitswarm}
+        \cardtypeRedHand{1}
+        \cardtitle{Vomita sciame}
+        \cardcontentglog
+        {0}
+        {Incantatore}
+        {[somma] round}
+		{Vomiti un enorme torrente di piccoli insetti, creando uno sciame in qualsiasi spazio adiacente. E' uno sciame con [dadi] DV. Lo sciame dà la caccia ai vostri nemici. Scegli anche [dadi] tra le seguenti opzioni:
+     (a) Lo sciame punge e morde, infliggendo 1 danno per ogni round a tutte le creature all'interno del suo spazio. Questa opzione può essere scelta più volte.
+    (b) Lo sciame striscia ovunque e distrae le creature all'interno del suo spazio, causando una penalità di -1 a tutti i tiri. Questa opzione può essere scelta più volte.
+    (c) Lo sciame è denso di mosche e altri insetti volanti, e oscura la visione attraverso il suo spazio.
+    (d) Si creano invece [dadi] sciami, ciascuno con 1 DV.}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{longarm}
+        \cardtypeRedHand{1}
+        \cardtitle{Braccio elastico}
+        \cardcontentglog
+        {0}
+        {Incantatore}
+        {[somma] round}
+		{Le tue braccia crescono in lunghezza di 1.5m per [dado] mentre non perdono nulla della loro destrezza.}
+        \cardborder
+    \end{tikzpicture}   
+%    \begin{tikzpicture}
+%        \cardbackground{puppetry}
+%        \cardtypeRedHand{1}
+%        \cardtitle{Burattinaio}
+%        \cardcontentglog
+%        {Contatto}
+%        {Una creatura}
+%        {0}
+%		{}
+%        \cardborder
+%    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{animatefood}
+        \cardtypeCulinary{1}
+        \cardtitle{Animare cibo}
+        \cardcontentglog
+        {Contatto}
+        {[dadi] porzioni}
+        {[dadi] ora o se distrutto}
+		{Il cibo prende vita sotto il controllo del mago. Otteniene un movimento, la capacità di manipolare gli oggetti limitata dalle dimensioni e alle sue proprietà e la capacità di comunicare col mago. Avranno una personalità simile a quella del mago, ma con l'eccentricità degli ingredienti che li compongono. Ai fini dei PF, il mago distribuisce [somma] PF tra tutti i pezzi di cibo che sta animando.}
+        \cardborder
+    \end{tikzpicture}  
+    \begin{tikzpicture}
+        \cardbackground{retrogusto}
+        \cardtypeCulinary{1}
+        \cardtitle{Retrogusto amaro}
+        \cardcontentglog
+        {}
+        {}
+        {}
+		{.}
+        \cardborder
+    \end{tikzpicture}  
+
+\end{center}
+\end{document}
+
+
+%Cattivo gusto in bocca
+%----------------------------------------------------------------
+%R: 30' T: [dadi] creature D: giri di dadi
+%
+%Le creature a portata di mano assaggiano improvvisamente il peggior sapore possibile, la sensazione che inonda la loro bocca.  Devono conservare ogni round per la durata.  Se qualcuno non riesce a salvarsi, perde l'azione e la spende vomitando, mentre il suo corpo rifiuta istintivamente il gusto terribile.
+%
+%Glassa al cioccolato
+%----------------------------------------------------------------
+%R: 30' T: tutti nel cono D: un'azione
+%
+%Si spara un'onda di caramello fuso in un cono da 30'.  Tutti coloro che ne sono colpiti devono salvarsi.  Coloro che superano i loro salvataggi sono parzialmente intrappolati nel caramello che si indurisce rapidamente, ma devono comunque passare un giro per liberarsi.  Finché non sono liberati, non possono muoversi e potrebbero non essere in grado di compiere altre azioni, Discrezione dell'arbitro.  Coloro che falliscono il loro salvataggio, invece, sono totalmente avvolti nel caramello e non possono muoversi.  Inoltre, se lasciati intrappolati troppo a lungo, cominceranno a soffocare.
+%
+%
+%
+%Hold Person
+%R: 50' T: creature D: concentration, up to [sum] rounds
+%Target creature or object is locked in place by divine force. You must maintain concentration for this spell to work. Target can breathe and move their eyes, but cannot swim, fly, or perform any other action. If the creature is particularly willful, blasphemous, or a spellcaster, it may Save each round to break free, with a penalty equal to the [dice] you invested.
+%
+%
+%
+%Water Walk
+%R: touch T: [dice] creatures D: [sum] minutes
+%You can walk over water as if it were land. Very wavy seas may require you to Save vs Dex.
+%
+%
+%Remove Fear
+%R: 100' T: creatures that can see and hear you D: Up to [sum], varies
+%Target creatures that can see and here you are immune to fear and automatically pass all morale checks for the duration of this spell. The duration varies with the dice invested. 1 [dice]: minutes, 2 [dice]: hours, 3 [dice]: months, 4 [dice] years. The caster cannot benefit from this spell. If the caster fails a Fear test or a Morale check in sight of a creature affected by this spell, the spell's effects end for that creature. 
+%
+%
+%Raise Dead
+%R: touch T: corpse D: permanent
+%You cannot normally learn this spell. It should be the object of an epic quest. You ask the Authority to return target creature to life. The creature must have died no more than 48hrs ago. The corpse must be mostly intact. If this spell succeeds, the creature returns to life at 0 HP. Any life-threatening wounds are healed to the point where the creature can function, but missing limbs will not regrow and deep scars will remain. The raised creature permanently loses 1d6 HP, and must Save or lose 1d6 Charisma.
+%Any truly devout priest of the Authority can cast this spell even if they do not know it. Unless it is cast as part of a major miracle, it has a 99% chance of failure. If you are coerced or paid to cast this spell, the chance of failure is 100%.
+%
+%
+%Create Food
+%R: touch T: point D: 0
+%You create enough food to feed [sum] people for one meal, along with clean water to fill one mug per person. Mugs, utensils, and condiments are not provided.
+%
+%
+%Sending
+%R: unlimited T: creature you have spoken to before and whose true name you know D: [sum] rounds
+%You send a message that can be spoken in [sum] rounds or less to your target. The message will appear in 24-[sum] hours. It may appear to them as a dream, as a waking
+%vision, or as a booming voice only they can hear.

@@ -1,0 +1,87 @@
+\documentclass{article}
+
+%%%%%%%%%%%
+% General %
+%%%%%%%%%%%
+\usepackage[nohead,nofoot,landscape]{geometry} 
+\usepackage{picture,lipsum,fancyhdr,wallpaper}
+\usepackage[british]{babel}
+\usepackage{tikz,marvosym}
+
+%%%%%%%%%%
+% Tweaks %
+%%%%%%%%%%
+\thispagestyle{empty}
+
+%%%%%%%%%%
+% Cheats %
+%%%%%%%%%%
+\usepackage[overload]{textcase}
+
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
+\usepackage{xcolor}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{5C5B5B}
+\definecolor{greene}{RGB}{35,201,117} 
+\definecolor{maagenta}{HTML}{D3A4F9}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{bluette}{RGB}{14,188,232}
+\definecolor{black}{RGB}{0,0,0}
+
+%%%%%%%%%%%%%%%%
+% New Commands %
+%%%%%%%%%%%%%%%%
+\newcommand{\of}{\color{white} OBJECTS \qquad \qquad \qquad \qquad FOLLOWERS}
+\newcommand{\strcr}[2]{\color{red} STRENGTH: #1 \qquad \qquad \color{bluette} CRAFT: #2}
+\newcommand{\golife}[2]{\color{yellow} GOLD: #1 \qquad \qquad \color{greene} LIFE: #2}
+
+\newcommand{\card}[9]{% professione, strength, craft, gold, life, alignement, start, objects, followers, abilities
+  %% Sfondo pergamena
+  %\ThisLRCornerWallPaper{1.2}{/home/sensi/Pictures/Wallpapers/5-wrinkled-parchment-paper1.jpg}
+  
+  \begin{tikzpicture}[remember picture,overlay]
+
+    \node [rectangle, fill=black, anchor=north, minimum width=\paperwidth, minimum height=1.5cm, font=\bfseries\Huge\color{white}] 
+    (high) at (current page.north) {\MakeTextUppercase{#1}};
+    
+   \node [rectangle, fill=black, anchor=west, minimum width=1.5cm, minimum height=\paperheight, font=\bfseries\LARGE] (left) at 
+   	(current page.west) {\rotatebox{-90}{\strcr{#2}{#3}}}; 
+     
+   \node [rectangle, fill=black, anchor=east, minimum width=1.5cm, minimum height=\paperheight, font=\bfseries\LARGE] (right) at 
+   	(current page.east) {\rotatebox{-90}{\golife{#4}{#5}}};
+    
+  \node [rectangle, fill=black, anchor=south, minimum width=\paperwidth, minimum height=1.5cm, font=\bfseries\LARGE] (low) at (current 
+  	page.south) {\of};
+
+  \node [rectangle] (box) at (current page.center)
+  	{ 
+		\begin{minipage}{0.3\paperwidth}
+			\includegraphics[height=0.65\paperheight]{#9}
+		\end{minipage}
+		\begin{minipage}{0.4\paperwidth}
+			{\large
+			\begin{center}
+				\textbf{Alignement}: \MakeTextUppercase{#6}  \qquad \textbf{Start}: \MakeTextUppercase{#7} \\
+				\vspace{0.2cm} 
+				\textbf{SPECIAL ABILITIES} \\
+				\vspace{0.05cm}
+			\end{center}
+			#8
+		 	}
+		\end{minipage} 
+	};
+   \end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\card{sol priest}{3}{3}{1}{4}{evil}{tavern}{\lipsum[5]\lipsum[5]}{/home/sensi/Pictures/Fantasy/Characters/3qRIfrX.png}
+\newpage
+\card{damara}{2}{4}{1}{4}{good}{chapel}{\lipsum[5]\lipsum[5]}{/home/sensi/Pictures/Fantasy/Characters/dagmara-matuszak.png}
+
+\end{document}

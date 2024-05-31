@@ -1,0 +1,6 @@
+#!/bin/bash
+IFS=$'\n'
+for picture in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS; do
+	pdf_file=`echo "$picture" | sed 's/\.\w*$/.pdf/'`
+	/usr/bin/convert "$picture" "$pdf_file"
+done

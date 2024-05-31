@@ -1,0 +1,902 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{multirow,caption}
+\usepackage[right=1cm,left=1cm]{geometry}
+
+\pagestyle{empty}
+\begin{document}
+General notes:
+\begin{description}
+\item Range Progression: personal, touch (or eat), close (or eye contact, vodoo focus), far (voice), distant (line of sight), $\infty$;
+\item Area progression: personal, 1, few, area, bigarea (battlefield), entire city;
+\item Duration progression: 0, r/conc, min, h, d, M/y, permanent (caster/object or oath life)
+\item Use DC = CAR - Lvl
+\end{description}
+
+
+\begin{description}
+\item $\dagger$ = ``spell shaper'': sum its level to that of the spell it modifies.
+\item $\ddagger$ = this alone
+\end{description}
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Black Magic}} [WIS]}
+\begin{tabular}{llllllll}
+	\multicolumn{7}{c}{\texttt{Agonaire}}\\
+	\multicolumn{7}{c}{The art of torment. Pain whether physical, emotional, or psychic}\\
+	\hline 
+	\texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Torment}} & -[1+SL] alle prove & 0 && close & few & r \\
+    							 & -[2+2SL] alle prove & 0 && close & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{Shackle}} & -2SL WIS & 0 && close & 1 & d \\
+    \hline
+    \multirow{1}{*}{\textit{Dark Delusion}} & Implant blame & 0 && close & 1 & d \\									
+    \hline
+    \multirow{1}{*}{\textit{Despair}} & Doom & 1 && close & 1 & r \\	
+    									& Command & 2 && voice & 1 & r \\	
+    									& Suggestion & 3 && voice & 1 & r \\	
+    									& Hold/Paralysis & 4 && voice & 1 & r \\									
+    \hline
+    \multirow{1}{*}{\textit{Nightmares}} & Condition by dreams & 1 && close & 1 & d \\
+    \hline
+    \multirow{1}{*}{\textit{Neural Overload}} & Stun [$\frac{1}{2}$SLd6]/Daze  & 1 && close & 1 & 0/m \\
+    											& Adrenaline exhaustion & 3 && close & 1 & m \\
+    											& Stroke & 6 && close & 1 & 0 \\
+    \hline
+    \multirow{1}{*}{\textit{Interrogation}} & Extract info & 1 && touch & 1 & conc \\
+    \hline
+    \multirow{1}{*}{\textit{Penance}} & Take sb's pain [$\frac{1}{2}$SLd6] & 2 && touch & 1 & conc\footnote{1 point of damage @ the time for conc time.} \\
+    &&&&&&\\
+
+    \multicolumn{7}{c}{\texttt{Black Will}}\\
+    \multicolumn{7}{c}{Commands and controls the wills of others.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Break Will}} & \textit{Command} & 1 && close & 1 & 1 \\
+    										& \textit{Charm} & 1 && close & 1 & m \\
+    										& \textit{Crushing despair} & 3 && close & area & m \\
+    									    & \textit{Emotion} & 4 && voice & area & conc \\
+    										& \textit{Dominate person}  & 6 && close & 1 & h  \\
+    										& \textit{Thrall/Enslave} & 7 && close & 1 & $\infty$ \\
+    \hline
+    \multirow{1}{*}{\textit{Corruption}} & Hypnotize & 2 && eye & f & m \\
+    										& Suggestion (reshape will or activate) & 3 && eye & 1 & d \\
+    \hline
+    \multirow{1}{*}{\textit{Unholy Ecstasy}} & Perverse pleasure & 1 && voice & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{The Sun Eclipsed}} & Channel through others & 4 && vodoo & 1 & r \\
+    \hline
+     \multirow{1}{*}{\textit{Bond of Shadows}} & Sense through servants & 2 && far & 1 & m \\
+        &&&&&&\\
+    
+    \multicolumn{7}{c}{\texttt{Devouring}}\\
+    \multicolumn{7}{c}{This spell allows one to absorb health and magic by draining others.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Draught of Life}} & Steal life to use as spell pool & 4 && touch & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{Steal Youth}} & Steal years & 4 && touch & 1 & 0 \\
+    \hline
+    \multirow{1}{*}{\textit{Steal the Essence}} & Steal mundane trait/ability from fallen & 2 && touch & 1 & d \\
+    											   & Steal EX ability from fallen & 4 && touch & 1 & d \\
+											   & Steal SUP ability from fallen & 5 && touch & 1 & h \\
+											   & Steal SL ability from fallen & 7 && touch & 1 & m \\
+    \hline
+    \multirow{1}{*}{\textit{Desolation}} & Drain land by spreading desolation & 3 && close & area & r \\
+    \hline
+	\multirow{1}{*}{\textit{Way of the Wendigo}} & Drain others to regen your HP & 2 && touch & 1 & r \\
+										        & Drain others to regen your attributes & 4 && touch & 1 & r \\
+        &&&&&&\\
+
+    
+     \multicolumn{7}{c}{\texttt{Hellfire}}\\
+     \multicolumn{7}{c}{The summoning of raw unholy power.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Unholy Flame}} & blasts/bolts/walls of infected  fire & 1 && touch & 1 & 0 \\
+								  & blasts/bolts/walls of unhealable fire  & 3 && touch & 1 & 0 \\
+    \hline
+    \multirow{1}{*}{\textit{Imbue Item}} & Shape hellfire into weapon/shield & 1$\dagger$ && touch & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{Desecration}} & Spoil/Taint (holy/natural) place/resources & 3 && touch & 1 & d \\
+    \hline
+    \multirow{1}{*}{\textit{Hell Blast}} & Makes fires affecting undead/spirits & 2$\dagger$ && close & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{Inner Fire}} & Hellfire in you & 3 && personal & personal & r \\
+       &&&&&&\\ 
+     \end{tabular}
+\end{table}  
+
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Black Magic}} [WIS]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Malediction}}\\
+   \multicolumn{7}{c}{The bestowing of curses, both great and small.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Bestow Curse}} &  Annoyances & 1 && eye & 1 & r \\
+    										&  Minor penalties & 2 && touch & 1 & m \\
+    										&  \textit{Besotw curse} spell / Twice cursed & 3 && touch & 1 & m \\
+    										&  L1 curses which affects also those near target & 3 && touch & 1 & m \\
+    										&  Ill fortune & 3 && touch & 1 & y \\
+    										&  Curse of undeath/lycanthropy & 5 && touch & 1 & permanent \\
+    										&  Outcasting & 5 && voice & 1 & y \\
+    										&  Generational curse & 8 && touch & 1 & permanent \\
+ 
+ 
+ \hline
+    \multirow{1}{*}{\textit{Black Prayer}} & Invocation of unholy favor, \textit{Prayer} [$\pm$SL/3] & 1 && close & few & r \\
+   									& \textit{Mark of death} / 2 $\times$\textit{Prayer} & 4 && close & few & r \\
+   								    & \textit{Unholy Chorus} / 3 $\times$\textit{Prayer}  & 6 && close & few & r \\
+    \hline				    
+   	\multirow{1}{*}{\textit{Summons of the Damned}} & Anchor to/haunt something after death & 8 && touch & personal & permanent \\	
+   	 \hline	    
+   	 \multirow{1}{*}{\textit{Counter Blessings}} & Dispell/End blessing effects & 2 && close & area & 0 \\	
+   	 \hline	    
+   	 \multirow{1}{*}{\textit{Inhibition}} & Disrupt innate EX talents & 3 && close & 1 & r \\	
+									   	 & Disrupt innate SU talents & 3 && close & 1 & r \\	
+									   	 & Disrupt innate SLA talents & 5 && close & 1 & r \\	
+									   	 
+			&&&&&&\\
+
+    
+     \multicolumn{7}{c}{\texttt{Rend the Weave}}\\
+     \multicolumn{7}{c}{Tearing apart a subjects flesh, bone, mind and spirit}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Rending}} & Physical attack 1d6, requires bless to heal & 2 && close & 1 & 0 \\	
+     \hline
+    \multirow{1}{*}{\textit{Crippling}} & Inflict long-term injuries & 2 && touch & 1 & d \\
+     \hline
+    \multirow{1}{*}{\textit{Madness}} & Inflict disorders/traumas & 2 && touch & 1 & d \\
+    									& Shatters mind entirely & 7 && touch & 1 & M \\
+    									
+    	\hline
+    \multirow{1}{*}{\textit{Attribute Damage}} & Attribute damage [-1d6] & 1 && touch & 1 & m \\
+    											& \textit{Poison} & 3 && touch & 1 & r \\
+    	\hline
+    \multirow{1}{*}{\textit{Cursed Wounds}} & Wound must be blessed before heal is possible & 3 && touch & 1 & y \\
+    \hline
+    \multirow{1}{*}{\textit{Withering}} & Block wound/illness recovery or fast heal & 3 && touch & 1 & y \\
+    									   & Block/Slow growth & 4 && touch & 1 & M \\
+    	&&&&&&\\
+    	
+    	
+    	
+    \multicolumn{7}{c}{\texttt{The Tolling}}\\
+    \multicolumn{7}{c}{The summoning of demons or quasi-sentient demonic energy forces.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Unholy Construct}} & Summon unholy power and animate construct & X && touch & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{The Distant Call}} & Summon entity not yet reach full demon status & 3 && touch & 1 & m \\
+    \hline
+    \multirow{1}{*}{\textit{Invoke the Darkness}} & Command undead/demons & 3 && voice & few & m \\
+    \hline
+    \multirow{1}{*}{\textit{Bone Dance}} & Channel for souls to possess their bodies again & 4 && close & area & h \\
+    \hline
+    \multirow{1}{*}{\textit{Stormbringer}} & Awaken ancient power of destructive elements & 5 && voice & area & h \\
+	\hline
+    \multirow{1}{*}{\textit{Daemonium}} & Project your shadow as a demonic construct & 6 && voice & 1 & r \\
+									   & Havoc it causes will fuel your power & 2$\dagger$ && voice & 1 & r \\
+	&&&&&&\\
+	
+	
+	\multicolumn{7}{c}{\texttt{Repression}}\\
+	\multicolumn{7}{c}{The binding and compelling of spirits.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Binding}} & \textit{Geas-quest} & 6 && close & 1 & M \\
+    \hline
+    \multirow{1}{*}{\textit{Enchain}} & Imprison spirit in object & 4 && voice & 1 & d\\
+								     & Imprison spirit in object to enhance it & 5 && voice & 1 & d\\
+    \hline
+    \multirow{1}{*}{\textit{Necromancy}} & Corpse to unquiet dead & 2 && touch & 1 & M\\
+									    & Corpse to sentient undead & 6 && touch & 1 & d\\
+    \hline
+    \multirow{1}{*}{\textit{Infernal Transmutation}} & Offers ``favors'' for corruption & 4 && close & 1 & d\\ 
+    \hline
+    \multirow{1}{*}{\textit{Gate of Souls}} & Bind victim to a demon to gradually sicken & 5 && touch & 1 & d\\
+										    & Bind target to a demon to grant her PP & 7 && touch & 1 & h\\
+										    & Bind victim to a major demon to sacrifice her & 7 && touch & 1 & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Black Transference}} & Transferring your evil/corruption onto others & 5 && touch & 1 & h \\
+\end{tabular}
+\end{table}  
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Holy Magic}} [CON]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Armor of Light}}\\
+   \multicolumn{7}{c}{Wrapping yourself in heavenly armament.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Smith of Light}} & Forge powerful weapon/armor of pure light & 1 && personal$\ddagger$ & personal$\ddagger$ & r \\
+   \hline
+    \multirow{1}{*}{\textit{Radiant Spirit}} & Aura granting +[SL] to ST & 2 && personal & area & r \\
+    											& Aura granting +[2+SL] to ST against mind affecting & 2 && personal & area & r \\
+    											& \textit{Death ward} & 5 && personal & 1 & m \\ 
+    											& Aura granting [SL/2] SR & 7 && personal & area & r \\
+  
+    \hline
+    \multirow{1}{*}{\textit{Strength of Ten}} & ``Exoskeleton'' of light granting [+1d4] Str & 2 && personal & personal & r \\
+    
+    \hline
+    \multirow{1}{*}{\textit{Immovability}} & Resist push/drift/charge forces [+SL] SIZ & 2 && touch & few & r \\
+										  & Aggro all attacks on group onto yourself & 3 && personal & few & r\\ 
+										  
+	\hline
+    \multirow{1}{*}{\textit{Spear of Heaven}} & Spend life-energy to [+HP/4] to damage & 2 && personal & few & 1 \\
+	
+	\hline
+    \multirow{1}{*}{\textit{Body of Light}} & Intervention beyond death & 8 && personal & area & 1 \\
+										   & Act despite being  helpless & 4 && personal & area & 1 \\
+	\hline
+    \multirow{1}{*}{\textit{Ward of Light}} & \textit{Sanctuary} & 1 && close & few & r\\
+    										   & Wall up creature of darkness & 4 && close & 1 & r\\
+    	&&&&&&\\
+	
+	
+	\multicolumn{7}{c}{\texttt{Awesome Wrath}}\\
+	\multicolumn{7}{c}{Show thy enemies the true power of good, and they shall cower in their decrepit wickedness!}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Awe}} & Cha-based skills get [+SL] & 0 && personal & area & r \\							   								 & Stun/intimidate as per \textit{Turn} & 1 && personal & area & r \\	
+    \hline
+    \multirow{1}{*}{\textit{Radiant Strike}} & Repulse enemies & 2 && personal & area & 0 \\
+    											& Repulse and [2d6] damage enemies & 3 && personal & area & 0 \\
+    \hline
+    \multirow{1}{*}{\textit{Mighty Sign}} & Wide range moral bonus [+SL/2] & 2 && far & battlefield & m \\
+    \hline
+    \multirow{1}{*}{\textit{Aura of Light}} & [+1d6] Cha & 1 && personal & personal & r \\
+    \hline
+    \multirow{1}{*}{\textit{Holy Word}} & Make people ear you clearly & 0 && voice & battlefield & 0 \\
+									   & \textit{Dictum} & 7 && far & area & 0 \\
+									   & \textit{Holy word} & 7 && far & area & 0 \\
+	&&&&&&\\
+\end{tabular}
+\end{table} 
+
+
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Holy Magic}} [CON]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Benediction}}\\
+    \multicolumn{7}{c}{You may lay blessings, counter curses, and inspire others.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Invocation}} & \textit{Bless} & 1 && close & area & m\\
+    										& \textit{Prayer} & 3 && close & area & r\\
+ 	\hline
+    \multirow{1}{*}{\textit{Remove Curses}} & Remove curses, taint and lesser afflictions & 2 && touch & touch & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Guidance}} & Influence large crowds toward good choices & 2 && voice & area & h\\
+    \hline
+    \multirow{1}{*}{\textit{Hand of Destiny}} & Grant luck [+SL] / influece simple random effects & 0 && personal & personal & 1\\
+    										     & Attempt to force destiny/outcomes & 8 && close & few & r\\
+    \hline
+    \multirow{1}{*}{\textit{Great Blessing}} & Expend great deal of life force to form holy items & 8 && touch & 1 & permanent\\
+    	&&&&&&\\
+    	
+  \multicolumn{7}{c}{\texttt{Exorcism}}\\
+    \multicolumn{7}{c}{This weave covers the purification and banishment of evil spirits or forces.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Purification}} & \textit{Neutralize Poison} & 1 && touch & 1 & m\\
+    										  & \textit{Remove disease} & 2 && touch & 1 & 0\\
+    										  & Turn creatures/diseases & 3 && voice & area & m\\
+    										  & \textit{Remove fatigue} & 4 && touch & few & 0\\
+    										  & \textit{Dispel} mind-affecting spells & 4 && touch & 1 & 0\\
+ 	\hline
+    \multirow{1}{*}{\textit{Banishment}} & \textit{Dismissal} & 5 && voice & 1 & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Deanimation}} & \textit{Disrupt undead} [1d6] & 0 && touch & 1 & 0 \\
+     									 & \textit{Undeath to death} & 6 && voice & area & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Peace}} & Offer peace and freedom to unquiet dead & 5 && touch & 1 & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Shattering}} & \textit{Break enchantment} & 5 && close & 1 & 0\\
+    	&&&&&&\\    	
+    	
+    	
+    \multicolumn{7}{c}{\texttt{Hearthen}}\\
+    \multicolumn{7}{c}{You may lend inner strength to others, granting the strength and courage to endure.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Inspiration}} & \textit{Hope} & 1 && close & few & m\\
+									     & \textit{Heroism} & 3 && touch & 1 & m\\					    
+ 	\hline
+    \multirow{1}{*}{\textit{Strenghten}} & Grant HP, \textit{Vigor- mass lesser} & 3 && touch & few & m\\
+                                         & \textit{Aura of vitality} & 7 && close & area & r\\
+    \hline
+    \multirow{1}{*}{\textit{Sustaining}} & Function despite wounds & 4 && touch & 1 & r\\
+   									    & Function beyond death & 8 && touch & 1 & 1\\
+    \hline
+    \multirow{1}{*}{\textit{Holy smite}} & Smite creatures & 2 && touch & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Enduring Heart}} & Ignore fatigue/hunger/thirst/distraction/temperature & 2 && touch & 1 & h\\
+										    & Strengthen mind/will (i.e. vs fear/mind affecting)& 3 && touch & 1 & m\\
+    	&&&&&&\\
+    	
+    	
+  \multicolumn{7}{c}{\texttt{Open the Way}}\\
+  \multicolumn{7}{c}{Revive the dead, or ask higher beings to aid you}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Lesser Summons}} & Summon positive-energy constructs & 2 && close  & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Gates of Light}} & Open a path to the higher planes for asking & 1 && personal & personal & 1\\
+    \hline
+    \multirow{1}{*}{\textit{Gate of Judgment}} & Send a spirit to be judged by the heavens & 10 && close & 1 & 0\\
+    \hline
+    \multirow{1}{*}{\textit{Call of Alanor}} & Summon the dead to \textit{speak with the dead} & &&  &  & \\
+    											& Allow a spirit to take form and act &  &&  &  & \\
+    											& \textit{Raise the dead} & && & & \\
+    \hline
+    \multirow{1}{*}{\textit{Path of Light}} & Visit the fringes of the upper planes & 5 && personal & close & 1\\
+    \hline
+    \multirow{1}{*}{\textit{Gates of Light}} & Let elemental raw energies pour out & 4 && voice & area & r\\
+    &&&&&&\\ 
+    
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Holy Magic}} [CON]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Prophecy}}\\
+  \multicolumn{7}{c}{Allows higher powers to speak through you.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{The Currents of Time}} & Minor foretelling, insight, and scrying effects & 0 && touch & personal & 1\\
+												  & \textit{Augury} & &&  &  & \\
+												  & \textit{Find the Path} & &&  &  & \\
+												  & \textit{True Strike}  & &&  &  & \\
+												  & \textit{Clairvoyance} & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Divine Insight}} & See into hearts & 3 && personal & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Prophecy}} & Higher powers to speak/work through you & 5 && personal & voice & r\\
+    \hline
+    \multirow{1}{*}{\textit{Inner Voice}} & Alerted of important events/knowledge & 2 && personal & personal & h\\
+    \hline
+    \multirow{1}{*}{\textit{Gift of Tongues}} & Communicate with livign and entities & 3 && personal & voice & h\\
+    \hline
+    \multirow{1}{*}{\textit{True Witness}} & Make truths you speak apparent or alive to audience & 3 && personal & few & conc\\
+    &&&&&&\\
+    
+    
+  \multicolumn{7}{c}{\texttt{White Light}}\\
+  \multicolumn{7}{c}{Summon holy energy to attack evil or heal good characters}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Healing}} & Heal mundane injuries & 1 && touch & 1 & m\\
+        							& Wards off mundane injuries & 2 && touch & 1 & r\\
+    								& Neutralize poisons/diseases & 2 && touch & 1 & h\\
+    								& Restore attributes loss & 4 && touch  & 1 & h\\
+    								& Restore level loss & 5 && touch & 1 & d\\
+    
+    \hline
+    \multirow{1}{*}{\textit{Elemental Light}} & \textit{Light} & 0 && personal & area & h \\
+    										& \textit{Daily Light} & 1 && close & area & r \\
+    										& \textit{Luce Incandescente} & 2 && close & 1 & 0 \\
+    										
+    \hline
+    \multirow{1}{*}{\textit{Revelation}} & \textit{Detect $\cdots$} & 1 && close & area & conc \\
+    \hline
+    \multirow{1}{*}{\textit{Wings of Light}} & Pos. energy bonus to Abilities, SR, ST & 3 && close & few & r \\
+    \hline
+    \multirow{1}{*}{\textit{Reveal Lies}} & \textit{Reveal lies}, \textit{Zone of truth} & 3 && close & area & m \\
+    									 & Targets know the caster is telling the truth & 2 && voice & voice & conc \\    									      		 & \textit{Suggestion} makes victim confront w/ her li(v)es & 3 && touch & 1 & conc\\
+    \hline
+    \multirow{1}{*}{\textit{Form of Light}} & \textit{Ethereal jaunt} & 5 && personal & personal & m \\	
+    									 & \textit{Commune} & 4 && personal & personal & r \\
+    &&&&&&\\
+    
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{The Inner Way}} [STR]}
+\begin{tabular}{llllllll}
+	\multicolumn{7}{c}{\texttt{Storm Dance}}\\
+	\multicolumn{7}{c}{Grants the blazing speed of lightening and the incredible reaction speed of a cat.}\\
+	\hline 
+	\texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Hastening}} & Eye-no-see sleight of hand skill check & 1 && personal$\ddagger$ & personal$\ddagger$ & 0\\
+    									& \textit{Expeditious retreat} & 1 && personal$\ddagger$ & personal$\ddagger$ & 0 \\
+    									& \textit{Haste} & 3 && personal$\ddagger$ & personal$\ddagger$ & r\\
+	\hline
+    \multirow{1}{*}{\textit{Deflection}} & \textit{Evade} & 4 && personal$\ddagger$ & personal$\ddagger$ & r\\
+    									& Monk's \textit{Deflect arrows} & 2 && personal$\ddagger$ & personal$\ddagger$ & m\\
+    	\hline
+    \multirow{1}{*}{\textit{Blinding Strike}} & +SL to BAB for ranged attacks & 2 && personal$\ddagger$ & personal$\ddagger$ & r\\
+    \hline
+    \multirow{1}{*}{\textit{Split Second}} & Pay CON to take bonus action out of turn & 6 && personal$\ddagger$ & personal$\ddagger$\\
+    									   & \textit{Time stop} & 9 && personal$\ddagger$ & personal$\ddagger$\\
+    	\hline
+    \multirow{1}{*}{\textit{Enhanced Dexterity}} & \textit{Cat's grace} & 1 && personal$\ddagger$ & personal$\ddagger$\\
+    	\hline
+    \multirow{1}{*}{\textit{Stop the Sands}} & Accelerate time spent in mental/focus skills & 2 && personal$\ddagger$ & personal$\ddagger$\\
+    &&&&&&\\
+    
+    
+  \multicolumn{7}{c}{\texttt{Adrenaline Jolt}}\\
+  \multicolumn{7}{c}{Infuse allies with extra energy and enhance their performance.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Mighty Effort}} & \textit{Rage} & 1 && personal & personal & r\\
+    									    & Grant an explosive action & 3 && touch & 1 & 1\\
+    \hline
+    \multirow{1}{*}{\textit{Hastening}} & as per Storm Dance & +2 && touch & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Focused Blow}} & 2+ attacks condensed into a single blow at $\Sigma$ BAB & 3 && touch & 1 & 1\\
+    \hline
+    \multirow{1}{*}{\textit{Psychic Surgery}} & Safely manipulate body processes (\textit{Sleep}, stop bleeding) & 3 && personal & 1 & r \\
+    \hline
+    \multirow{1}{*}{\textit{Nerve Strike}} & Halts a body process (\textit{blindess}, paralysis, heart attack) & 5 && touch & 1 & 1 \\
+    &&&&&&\\
+    
+    
+    
+  \multicolumn{7}{c}{\texttt{Bank the Fires}}\\
+  \multicolumn{7}{c}{Support and control of the user's metabolism and life force.}\\
+    \hline
+    \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Metabolic Support}} & resist need to eat/drink/breath or fatigue& 1 && personal & 1 & h\\
+											    & feign death & 1 && personal & 1 & h\\
+    \hline
+    \multirow{1}{*}{\textit{Death Ward}} & resist disease/poison & 1 && personal & 1 & m\\
+										 & resist paralysis & 3 && personal & 1 & m\\
+										 & halt blood loss, reattach severed limbs & 3 && personal & 1 & d\\		
+										 & resist aging & 4 && personal & 1 & permanent\\    
+    \hline
+    \multirow{1}{*}{\textit{Metabolic Control}} & accelerate recovery, resist extreme climate & 2 && personal & 1 & h\\
+											    & \textit{Haste/Slow} & 3 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{The Sleep of Ages}} & suspend animation without detectable signs of life & 6 && personal & 1 & permanent\\
+    \hline
+    \multirow{1}{*}{\textit{C'hi Reservoir}} & build up a reserve of HP ($=PP \times 2$) & 3 && personal & 1 & d\\
+    &&&&&&\\
+    
+    
+    
+  \multicolumn{7}{c}{\texttt{Face Dancer}}\\
+  \multicolumn{7}{c}{Sorceress manipulate her own flesh.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Body Weaponry}} & combat related augmentations & 1 && personal & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Shapeshift}} & animal form, duplicating animal mundane talents & 2 && personal & 1 & r\\
+										 & impersonate specific individual & 4 && personal & 1 & m\\    
+    \hline
+    \multirow{1}{*}{\textit{Self-Healing}} & self-stabilization & 2 && personal & 1 & 0\\
+										   & \textit{Cure light wounds} & 3 && personal & 1 & 0\\    
+    \hline
+    \multirow{1}{*}{\textit{Enchanced Durability}} & bonus HP via duplicating vital organs, reinforcing tissue & 3 && personal & 1 & d \\
+    \hline
+    \multirow{1}{*}{\textit{Dematerialize}} & \textit{Amorphous form}, flow like water & 4 && personal & 1 & m\\
+											& \textit{Gaseous form} & 6 && personal & 1 & m\\    
+											& immune to physical attacks & 7 && personal & 1 & m\\
+    &&&&&&\\
+    
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{The Inner Way}} [STR]}
+\begin{tabular}{llllllll}
+  \multicolumn{7}{c}{\texttt{Flesh of Iron}}\\
+  \multicolumn{7}{c}{Sorceress manipulate her won flesh.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Iron Consitution}} & enhance str, cos, HP & 3 && personal & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Inner Armor}} & grant ``natural'' armor, also focused on aspecific limb & 2 && personal & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Iron Fist}} & increase damage from natural attacks & 1 && personal & 1 & r\\
+    										    & \textit{Keen weapon} on natural attacks & 3 && personal & 1 & r\\   
+												& \textit{Ghost touch} on natural attacks & 5 && personal & 1 & r\\    
+    \hline
+    \multirow{1}{*}{\textit{Strenght of Stone}} & trades dex for str and damage resistance & 2 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Immovability}} & resist impacts transferring them into the earth & 4 && personal & 1 & r\\    
+    \hline
+    \multirow{1}{*}{\textit{Iron Shoulders}} & increase carrying capability & 1 && personal & 1 & h\\
+    &&&&&&\\
+    
+    
+    
+   \multicolumn{7}{c}{\texttt{Hyper Senses}}\\
+  \multicolumn{7}{c}{Allow user to enhance or extend her senses.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Enchanced Perception}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Extyended Senses}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Analytic Senses}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{New Senses}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Clairsentience}}&  & &&  &  & \\
+	&&&&&&\\	
+	
+	
+    	
+  \multicolumn{7}{c}{\texttt{Trance}}\\
+  \multicolumn{7}{c}{The art of utterly focusing and channelling own energies.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Mnemonies}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Acceleration}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Analytic Senses}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Quick Study}}&  & &&  &  & \\
+	&&&&&&\\
+	
+	
+	
+ \multicolumn{7}{c}{\texttt{Voice}}\\
+  \multicolumn{7}{c}{Inluience and manipulate through voice.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{The Subtle Tongue}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Tone of Command}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Whisper on the Wind}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Shattering}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Power Words}}&  & &&  &  & \\
+	&&&&&&\\
+	
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Mind Magic}} [INT]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Beglamourment}}\\
+  \multicolumn{7}{c}{Alter either what people perceive or how they interpret it.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Cloak of the King}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Veil of Memory}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Mob Rule}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Visages}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Cloak of the Fey}}&  & &&  &  & \\
+	&&&&&&\\	
+	
+	
+    	
+  \multicolumn{7}{c}{\texttt{Shield of Will}}\\
+  \multicolumn{7}{c}{Warding off mental attacks and divination.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Eldritch Mists}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Auric Disguise}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Warded Mind}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Psychic Purge}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Iron Will}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Ward of the Magi}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Supreme Effort}}&  & &&  &  & \\    
+	&&&&&&\\
+	
+	
+	
+ \multicolumn{7}{c}{\texttt{Deep Lore}}\\
+  \multicolumn{7}{c}{Tap into the massed memories and mental energy of the world.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Wisdom of the Ages}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Secrets of the Craft}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Summon History}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{True Witness}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Dreams of Adventure}}&  & &&  &  & \\
+	&&&&&&\\
+	
+	
+	
+   \multicolumn{7}{c}{\texttt{Dreamvoyaging}}\\
+  \multicolumn{7}{c}{The art of projecting yourself onto the astral plane.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Dreamtravel}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Dreamwalk}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Possession}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Dream of Explration}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Dreamsearch}}&  & &&  &  & \\
+	&&&&&&\\	
+	
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Mind Magic}} [INT]}
+\begin{tabular}{llllllll}
+ \multicolumn{7}{c}{\texttt{Dreamweaving}}\\
+  \multicolumn{7}{c}{Weaving of dreams and illusions.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Dreamshaping}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Gate of Dreams}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Forge of Dreams}}&  & &&  &  & \\    
+    \hline
+    \multirow{1}{*}{\textit{Experiential Tale}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Dream Sending}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Maze}}&  & &&  &  & \\
+	&&&&&&\\
+	
+	
+ \multicolumn{7}{c}{\texttt{Telekinesis}}\\
+  \multicolumn{7}{c}{Create motive force on the specified target.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Force Field Generation}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Telekinetics}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Micromanipulation}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Stabilization}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Inertial Compensation}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Missile Control}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Acrobatics}}&  & &&  &  & \\        
+	&&&&&&\\
+	
+	
+ \multicolumn{7}{c}{\texttt{Telepathy}}\\
+  \multicolumn{7}{c}{Communication with minds, as well as mental scans and probes.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Sending}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Scan}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Probe}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Seek}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Link}}&  & &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Alter}}&  & &&  &  & \\    
+	&&&&&&\\		
+	
+\end{tabular}
+\end{table} 
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Wood Magic}} [CHA]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Forestwalk}}\\
+  \multicolumn{7}{c}{You may call on the aid of animal spirits.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Call of the Wilds}} & \textit{Summon Nature Ally} & 1 && close & 1 & r\\
+										        & \textit{Summon Swarm} & 3 && close & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Skinwalker}}& call an animal spirit into the spellcaster & 2 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Beastspeech}}& \textit{Speak to animals} & 1 && personal & 1 & m\\ 
+									     & borrow nearby animal senses & 2 && personal & 1 & m\\ 
+									     & \textit{Charme Animals} & 2 && touch & 1 & r\\ 
+    \hline
+    \multirow{1}{*}{\textit{Forest Tread}}& request the guidance or guard of animal spirits & 2 && personal & few & m\\
+    \hline
+    \multirow{1}{*}{\textit{Totem Patron}}& gain an intermediary with the spirit world & 4 && personal & 1 & d\\
+   &&&&&&\\
+   
+   
+   \multicolumn{7}{c}{\texttt{Trailtwist}}\\
+  \multicolumn{7}{c}{You may conceal your traces, lead others astray, and walk ways hidden to others.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Weave the Roads}} & redirect targets subtly causing path lead to/around places you specify & 3 && voice & 1 & m/conc\\
+										      & misleading paths can include extra-planar destinations & 6 && voice & 1 & conc\\
+   \hline
+    \multirow{1}{*}{\textit{The False Path}} & cause your own trail to vanish & 0 && eye & few & m\\
+    \hline
+    \multirow{1}{*}{\textit{The Short Stroll}} & drastically reduce travel times & 0 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{The Fair Guide}} & caster never gets lost & 0 && personal & 1 & conc\\
+    &&&&&&\\
+   
+   
+   \multicolumn{7}{c}{\texttt{Hand of the Earth}}\\
+  \multicolumn{7}{c}{Allows the user to grow and animate plants.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Plant Growth}} & \textit{Plant growth} & 3 && touch & area & h\\
+    \hline
+    \multirow{1}{*}{\textit{Animate Plants}} & \textit{Entangle} & 2 && close & area & m\\
+    									     & \textit{Deadly vines} & 4 && touch & area & m\\
+    									     & \textit{Animate Treant} & 6 && touch & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Strange Harvest}}& plants grow anything the soil provided prime matters to & 4 && touch & 1 & h\\
+    \hline
+    \multirow{1}{*}{\textit{Plant Speech}}& \textit{Speak to plants} & 2 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Bonsai}}& manipulate plants (source of energy, climate) & 5 && touch & 1 & M/y\\
+	&&&&&&\\  
+    
+   
+   \multicolumn{7}{c}{\texttt{Hunter's Hound}}\\
+  \multicolumn{7}{c}{This powerful effect allows the user to embody the vengeance of the earth.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{The Wild Hunt}}& enhanced speed no fatiguing, unnerving track accuracy & 2 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{Tale of the Earth}}& tap into the memories of the earth & 4 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Spirits of Vengeance}}& chance for nature spirits rise up and do battle their enemies & 6 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{Embodiment of Anger}}& caster wrap herself in the angry essence of the earth & 4 && personal & 1 & m\\
+    											 & \textit{Elemental form} & 5 && personal & 1 & m\\
+	&&&&&&\\
+	
+		
+\end{tabular}
+\end{table} 
+
+
+
+\newpage
+\begin{table}[htbp!]
+\caption*{\textbf{\Large{Water Magic}} [INT]}
+\begin{tabular}{llllllll}
+   \multicolumn{7}{c}{\texttt{Animation}}\\
+  \multicolumn{7}{c}{Imbue target with the energies of water, allowing it to move and act on its own.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Sea of Life}} &  &  &&  &  & \\
+										        &  &  &&  &  & \\
+    \hline
+    \multirow{1}{*}{\textit{Master the Current}}&  & 2 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Bound Suspension}}& & 1 && personal & 1 & m\\ 
+									     &  & 2 && personal & 1 & m\\ 
+									     &  & 2 && touch & 1 & r\\ 
+    \hline
+    \multirow{1}{*}{\textit{Prosthesis}}&  & 2 && personal & few & m\\
+   &&&&&&\\
+   
+   
+   \multicolumn{7}{c}{\texttt{Tide of Blood}}\\
+  \multicolumn{7}{c}{You may reshape flesh, heal wounds, and create minor servants.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Birthed of Blood}} &  & 3 && voice & 1 & m/conc\\
+										      &  & 6 && voice & 1 & conc\\
+   \hline
+    \multirow{1}{*}{\textit{Pulse of Life}} &  & 0 && eye & few & m\\
+    \hline
+    \multirow{1}{*}{\textit{Reshaping of Flesh}} &  & 0 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{Blood Bond}} &  & 0 && personal & 1 & conc\\
+    &&&&&&\\
+   
+   
+   \multicolumn{7}{c}{\texttt{Polar Current}}\\
+  \multicolumn{7}{c}{This straightforward effect generates and shapes ice.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Ice Storm}} &  & 3 && touch & area & h\\
+    \hline
+    \multirow{1}{*}{\textit{The Sculptors Hand}} &  & 2 && close & area & m\\
+    									     &  & 4 && touch & area & m\\
+    									     &  & 6 && touch & 1 & m\\
+    \hline
+    \multirow{1}{*}{\textit{Sustain the Glacier}}& to & 4 && touch & 1 & h\\
+    \hline
+    \multirow{1}{*}{\textit{Daggers of Blood}}&  & 2 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{Armor of Winter}}&  & 5 && touch & 1 & M/y\\
+	&&&&&&\\  
+    
+   
+   \multicolumn{7}{c}{\texttt{Tincture of Alchemy}}\\
+  \multicolumn{7}{c}{Extract substances and essences from a variety of sources.}\\
+    \hline
+ \texttt{Spellweave} & \texttt{Effect} & \texttt{Lvl} & \texttt{PP} & \texttt{Range} & \texttt{Target} & \texttt{Duration} \\
+    \hline
+    \multirow{1}{*}{\textit{Refining}}&  & 2 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{Extract the Essence}}& & 4 && personal & 1 & r\\
+    \hline
+    \multirow{1}{*}{\textit{The Master Chef}}&  & 6 && close & few & h\\
+    \hline
+    \multirow{1}{*}{\textit{The Inner Eye}}&  & 4 && personal & 1 & m\\
+    											 &  & 5 && personal & 1 & m\\
+	\multirow{1}{*}{\textit{Spiritual Refinement}}&  & 6 && close & few & h\\    											 
+	&&&&&&\\
+	
+		
+\end{tabular}
+\end{table} 
+
+\end{document}

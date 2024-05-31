@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pdf_file=""
+for arg do
+  pdf_file="${pdf_file} ${arg//\ /\\ }"
+done
+echo pdftk ${pdf_file} cat output merged.pdf | bash

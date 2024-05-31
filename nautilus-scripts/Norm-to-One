@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILEPATH=`echo $NAUTILUS_SCRIPT_SELECTED_URIS | sed 's@file://@@g'`
+for arg in $FILEPATH
+do
+	#zenity --info --text="/home/sensi/fra@09/exe/norm1/run_norm1.sh /home/sensi/fra@09/exe/norm1/norm1 ${arg}"
+	/home/sensi/fra@09/exe/norm1/run_norm1.sh /home/sensi/fra@09/exe/norm1/norm1 ${arg}
+done
+exit

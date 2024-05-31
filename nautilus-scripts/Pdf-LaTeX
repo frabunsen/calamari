@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for arg do
+ if [[ "${arg##*.}" == "tex" ]]; then
+  /home/sensi/fra@09/scriptUtility/compila-LaTeX.sh "$arg"
+ fi
+done

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ERR_PARAM=65
+
+exe1="/home/sensi/work/software/itk/SetOrigin/setDirectionFromReference"
+exe2="/home/sensi/work/software/itk/Orient/orient"
+exe3="/home/sensi/work/software/matlab/matOptionalRescale/run_matOptionalRescale.sh /home/sensi/work/software/matlab/matOptionalRescale/matOptionalRescale"
+ref="/home/sensi/work/data/templates/ICBM-oriented.nii"
+for arg do
+ if [[ ! "${1##*.}" == "nii" ]]; then
+   zenity --info --text="Give me a .nii, please.."  
+   exit $ERR_PARAM
+ fi
+ out=${arg%.*}-out.nii
+ #$exe1 $arg $ref $out  # go2RAS
+ cp $arg $out		# orient
+ $exe2 $out $out	#
+ $exe3 $out $out 0.005
+done		 

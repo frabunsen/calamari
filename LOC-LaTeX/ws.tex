@@ -1,0 +1,46 @@
+\documentclass[parskip]{scrartcl}
+\usepackage[margin=15mm]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{tikz}
+\usepackage{pifont} 
+\usepackage[utf8]{inputenc}
+\begin{document}
+\pgfmathsetmacro{\cardwidth}{5}
+\pgfmathsetmacro{\cardheight}{8}
+\pgfmathsetmacro{\stripwidth}{0.6}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\ruleheight}{0.15}
+\begin{tikzpicture}
+\draw[rounded corners=0.2cm] (0,0) rectangle (\cardwidth,\cardheight);
+\fill[Melon,rounded corners=0.1cm] (\strippadding,\strippadding) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding) node[rotate=90,above left,black,font=\large] {RAZZE MORTALI \rotatebox[origin=c]{-90}{\ding{202}} \rotatebox[origin=c]{-90}{\ding{100}}};
+\node[text width=(\cardwidth-\strippadding-\stripwidth-2*\textpadding-0.3)*1cm,below right] at (\strippadding+\stripwidth+\textpadding,\cardheight-\textpadding) {
+    {\Large GOBLIN}\\
+    \vspace{0.15cm}
+    {\scriptsize Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\}
+    \vspace{0.25cm}
+   {{\large {Tratti Distintivi\hfill} }} \\[-9pt]
+  \vrule width \textwidth height 3pt \\[-3pt]
+%         \tikz{\fill (0,0) rectangle (\cardwidth-\strippadding-\stripwidth-2*\textpadding-0.3,\ruleheight);}\\
+        \vspace{0.2cm}
+        {\scriptsize Lorem ipsum dolor sit amet, consectetur adipisicing elit.\\[5pt]
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\} % <------Give a line break here
+ \vfill   };
+
+\end{tikzpicture}
+\end{document}
+
+%Creature di Terra
+%Creature del Cielo
+%Creature del Mare
+%Altre Creature
+%Razze Mortali
+%
+%Continenti
+%Luoghi Sacri
+%
+%Leggi dell'Universo
+%Piani di Esistenza
+
+
+\end{document}

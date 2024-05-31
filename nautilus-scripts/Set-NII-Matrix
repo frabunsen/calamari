@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ERR_PARAM=65
+
+exe="/home/sensi/fra@09/exe/SetOrigin/setDirectionMatrix"
+for arg do
+ if [[ ! "${1##*.}" == "nii" ]]; then
+   zenity --info --text="Give me a .nii, please.."  
+   exit $ERR_PARAM
+ fi
+ out=${arg%.*}-out.nii
+ SEQ=$(zenity --entry --title="Set matrix" --text="Matrix:")
+ $exe $1 $out "$SEQ"
+done		 

@@ -1,0 +1,239 @@
+\documentclass[twoside]{article}
+
+%%%%%%%%%%%
+% General %
+%%%%%%%%%%%
+\usepackage[nohead,nofoot]{geometry} 
+\usepackage{picture,lipsum,fancyhdr} 
+\usepackage{wallpaper} % http://tex.stackexchange.com/questions/46280/how-to-create-a-background-image-on-title-page-with-latex
+\usepackage[british]{babel}
+\usepackage{tikz,marvosym,pifont}
+\usetikzlibrary{positioning}
+
+%%%%%%%%%%
+% Tweaks %
+%%%%%%%%%%
+\thispagestyle{empty}
+\pagenumbering{gobble}
+\usepackage{fix-cm}
+\usepackage[outline]{contour}
+
+%%%%%%%%%%%%%
+% Librogame %
+%%%%%%%%%%%%%
+\usepackage[colorlinks=true,urlcolor=black]{hyperref}
+\usepackage{gamebook} % [debug,draft]
+\renewcommand{\gbturntext}{Vai~al~}
+%\pagenumbering{arabic}
+
+%%%%%%%%%%
+% Cheats %
+%%%%%%%%%%
+\usepackage[overload]{textcase}
+
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
+\usepackage{xcolor}
+\definecolor{white}{RGB}{255,255,255}
+\definecolor{gray}{HTML}{5C5B5B}
+\definecolor{greene}{RGB}{35,201,117}
+\definecolor{maagenta}{HTML}{D3A4F9}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{bluette}{RGB}{14,188,232}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{wood}{HTML}{94693D}
+
+%%%%%%%%%%%%%%%%
+% New Cooords  %
+%%%%%%%%%%%%%%%%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)| http://tex.stackexchange.com/questions/89588/positioning-relative-to-page-in-tikz
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+    \parsecomma#1\endparsecomma
+    \pgfpointanchor{current page}{north east}
+    % Save the upper right corner
+    \pgf@xc=\pgf@x%
+    \pgf@yc=\pgf@y%
+    % save the lower left corner
+    \pgfpointanchor{current page}{south west}
+    \pgf@xb=\pgf@x%
+    \pgf@yb=\pgf@y%
+    % Transform to the correct placement
+    \pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+    \expandafter\pgf@x\expandafter=\pgfmathresult pt
+    \pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+    \expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%
+% Dice backgr  %
+%%%%%%%%%%%%%%%%
+\usepackage[pages=some]{background}%il bg appare solo se chiamato con \BgThispage
+\usetikzlibrary{calc,shapes.geometric}
+\usepackage{lcg,epsdice}
+\usepackage{ifthen}
+\reinitrand[last=6, counter=die, seed=10, quiet]
+
+%%\AddEverypageHook{%
+%%\ifthenelse{\isodd{\value{page}}}
+%%{
+%niente se la pagina è dispari
+%%\backgroundsetup{contents={}}
+%%}
+%%{%dadi a margine se la pagina è pari
+\backgroundsetup%
+{   contents=%
+    {   \begin{tikzpicture}
+        [   overlay,
+            remember picture,
+        ]
+        		%\node at ($(current page.north west)+(16,-2)$) {\Huge{\epsdice{2}}};        		
+        		%\node at ($(current page.north west)+(17,-2)$) {\Huge{\epsdice[black]{3}}};            		
+        		\node at ($(current page.north west)+(16,-2)$) {
+        		      \tiny{\textcolor{white}{\rand\arabic{die}}}\Huge{\epsdice{\arabic{die}}}       
+        		      };
+        		\node at ($(current page.north west)+(17,-2)$) {
+        		\tiny{\textcolor{white}{\rand\arabic{die}}}\Huge{\epsdice[black]{\arabic{die}}}
+        			};      
+        \end{tikzpicture}
+    },
+    color=black,
+    angle=0,
+    scale=1,
+    opacity=1,
+}
+%%}
+%%\BgMaterial
+%%}
+
+%%%%%%%%%%%%%%%%
+% New Commands %
+%%%%%%%%%%%%%%%%
+\newcommand{\HUGE}[1]{
+\sffamily
+\fontsize{40}{36}\selectfont 
+%\contour{black}{\MakeTextUppercase{#1}}
+\MakeTextUppercase{#1} %http://tex.stackexchange.com/questions/27843/level-of-boldness-changeable
+\par %\fontsize{size}{interline} %http://tex.stackexchange.com/questions/36454/inconsistent-line-spacing
+}
+
+\newcommand{\NUGE}[1]{
+\fontsize{40}{36}\selectfont 
+\contour{wood}{\MakeTextUppercase{#1}}
+\par
+}
+
+\newcommand{\cover}{% 
+  
+  \ThisLLCornerWallPaper{1}{/home/sensi/Downloads/misc/64f5fbd2a4f7d9abffb1fe8a3575dedd}
+  
+  \begin{tikzpicture}[remember picture,overlay] %,every node/.style={anchor=center}
+
+    \node [rectangle, anchor=west, fill=wood, minimum width=3cm, minimum height=9cm, font=\bfseries\Huge\color{white}] (chapterbar) at (page cs:-1,0.5){};
+    
+    \node[anchor=west, font=\bfseries\Huge\color{white}] (ser) at (page cs:-0.9,0.4) {\ding{39}};
+    
+    \node[anchor=west, font=\bfseries\Huge\color{white}] (num) at (page cs:-0.95,0.7) {\NUGE{27}};
+    
+    \node[anchor=west, font=\bfseries\LARGE\color{white}] (aut) at (page cs:-0.7,0.4) {\MakeTextUppercase{Joe Dever}};
+    
+    \node[anchor=west, font=\bfseries\color{white}, text width=7cm] (vol) at (page cs:-0.7,0.7) {\HUGE{L'artiglio di Naar}};
+    
+    \node[anchor=west, font=\bfseries\huge\color{white}] (rank) at (page cs:-0.7,0.9) {\MakeTextUppercase{Gran Maestro Ramas}};
+    
+    \node [rectangle, anchor=south, fill=wood, minimum width=\paperwidth, minimum height=3cm, font=\bfseries\Huge\color{white}] 
+    (lowerbar) at (page cs:0,-1) {\includegraphics[scale=0.3]{logoel}};
+  
+   \end{tikzpicture}
+   \clearpage
+}
+
+
+\newcommand{\backcover}{% 
+
+	\ThisLLCornerWallPaper{1.1}{/home/sensi/Downloads/misc/90e88850ee3903321eb682ffc2a4badd}
+	
+	\begin{tikzpicture}[remember picture,overlay]
+	
+	\node [rectangle, anchor=east, fill=wood, minimum width=3cm, minimum height=9cm, font=\bfseries\Huge\color{white}] (chapterbarback) at (page cs:1,0.5){};
+	
+	\node[anchor=west, font=\bfseries\Huge\color{white}] (serback) at (page cs:0.84,0.4) {\ding{39}};
+	
+	\node[anchor=west, font=\bfseries\Huge\color{white}] (num) at (page cs:0.78,0.7) {\NUGE{27}};
+	
+	
+	\node[anchor=west, font=\bfseries\color{white}, text width=7cm] (volback) at (page cs:-0.12,0.7) {\HUGE{L'artiglio di Naar}};
+	
+	\node[anchor=west, font=\bfseries\color{white}, text width=10cm, below=1cm of volback] (vol) {
+\begin{flushright}
+\lipsum[1-2]
+\end{flushright}	
+	
+	
+	};
+	
+    
+    \node [rectangle, anchor=south, fill=wood, minimum width=\paperwidth, minimum height=3cm, font=\bfseries\Huge\color{white}] 
+    (lowerbar) at (page cs:0,-1) {\includegraphics[scale=0.3]{logoel}};	
+	
+	
+	\end{tikzpicture}
+}
+
+
+%%%%%%%%%%%%%%
+% LaTeXDRAW  %
+%%%%%%%%%%%%%%
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\cover
+
+\section*{Characther creation}
+
+\BgThispage
+\lipsum[2]
+
+\clearpage
+\BgThispage
+\section*{Game register}
+\lipsum[2]
+
+
+\clearpage
+\BgThispage
+\gbsection{start}
+\lipsum[1-3]
+You are locked in a strange room. Right in front of you, there is a big red button with a bright sign above it. On the northern wall, there is a heavy steel door. What would like to do in order to escape this room?
+\begin{gbturnoptions}
+	\gbitem{Press the red button}{redbutton}
+	\gbitem{Read the sign above the button}{steelopen}
+	\gbitem{Try to open the steel door}{steelclosed}
+\end{gbturnoptions}
+	
+\gbsection{steelopen}
+You enter the code and a green light starts blinking. The heavy steel door opens. If you want to leave the room, \gbturn{steelleave}, if you would rather like to press the red button, \gbturn{redbutton}.
+	
+\gbvillain{Orc}{Skill}{5}{Stamina}{6}
+The fight begins, but that is another story.
+
+
+\clearpage
+%%\NoBgThispage %no bg quà
+\backcover
+
+\end{document}

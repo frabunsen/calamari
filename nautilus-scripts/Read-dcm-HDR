@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for arg do
+	if [ -f "$arg" ]; then
+		#dcmdump $arg| zenity --text-info --height=1200 --width=800 --title=$arg
+		FIELD=$(zenity --entry --title="Grep in DICOM HDR" --text="String to grep:")
+		STRING=$(dcmdump $arg|grep $FIELD)
+		echo $STRING | zenity --text-info --height=1200 --width=800 --title=$arg
+	fi
+done	 

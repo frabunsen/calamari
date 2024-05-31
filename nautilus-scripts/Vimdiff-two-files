@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $# -ne 2 ]]; then
+  exit 1
+else
+   array=()
+   count=1
+   for arg do	
+     array[count]=$arg
+     let count=$count+1
+     if [[ ${#array[@]} -eq 2 ]]; then
+	git diff --no-index ${array[1]} ${array[2]} | zenity --text-info --height=500 --width=400 --title="$(basename ${array[1]}) vs. $(basename ${array[2]})"
+     fi
+   done
+fi

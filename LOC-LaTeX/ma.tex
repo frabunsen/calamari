@@ -1,0 +1,39 @@
+\documentclass{mu}
+
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title
+\pagestyle{empty}
+\chapterimage{cap0}
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\cleardoublepage
+\pagestyle{fancy}
+\chapterimage{cap1}
+\chapter{A}
+\section{B}
+\subsection{C}
+
+\body{ \lipsum }
+\begin{figure*}
+  \centering \includegraphics[width=\textwidth]{figure}
+  \caption{This is a figure caption}
+\end{figure*}
+\body{ \lipsum }
+
+\lipsum
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \centering
+    \includegraphics[width=0.48\textwidth]{figure}
+  \caption{Another figure}
+\end{wrapfigure}
+
+\lipsum
+
+
+\todo[inline]{colorful text blocks}
+\end{document}
+

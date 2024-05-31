@@ -1,0 +1,632 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{titlesec}
+\usepackage{adjustbox}
+\usepackage{lipsum}
+\usepackage{todonotes}
+\author{Frà}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMAND DEF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% definisco il comando \riquadroplot a 3 parametri (needs: usepackage{fancybox}, \usepackage{graphicx})
+\newcommand{\riquadroconfigura}[3]{
+\shadowbox{
+\begin{minipage}[h]{0.4\linewidth}
+\includegraphics[width=\textwidth]{#1}\label{}
+\end{minipage}
+\begin{minipage}[h]{0.6\linewidth}
+\textbf{#2} \\ #3 
+\end{minipage}
+	}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section{Character creation}
+Ability (descriptive), Skills (descriptive, but somehow veeery wide range), 
+
+\section{Combat rules}
+Any action is resolved by an ``action roll''. 
+
+
+\section{Magic rules}
+If the score isn't high enoguh to pass the target difficulty, you can prolong the casting to the following round and add the score of 
+the new roll to previous result. This causes a stun per round. 
+
+Somehow not all spells can be prolounged in this way. Certain spells simply fail after a fixed number of tries. Other may botch if the roll of the first round scores less than half the target difficulty.
+
+
+
+\subsection{Incantation}
+\begin{tabular}{ l c }
+  Text & \textit{textit} poem \\
+  Name & boombastic name of the ritual  \\ 
+  Description & brief description of effects \\
+  Circle props. & how to draw the circle, materials expended, proximity mages  \\
+  Time to complete & the time the circle and concentration must be uninterrupted \\
+  Effects &  range, duration, targets and damages/effects \\
+  Backfire & consequences of a non-successfull or interrupted invocation \\
+  Side effects & damages paid by casters as cost of the ritual \\
+  DC to Learn & difficulty check to comprehend the scroll \\
+  DC to Exectue & difficulty check of the whole procedure \\
+\end{tabular}
+
+
+\subsection{Ritual Sorcery list}
+\begin{itemize}
+\item Freya's warm hut (fumi, vapore, erbe, un caster, favorisce la guarigione, offre shelter)
+\item Terrible winter (dal cerchio si spandono ondate di gelo mortale per tutta la regione)
+\item Maelstr\"{o}m
+\item Home fire (propizia la fecondit\`{a}, bambini, raccolti, donne, bestiame, clima)
+\item Fierce warrior (RD, will, strength, duro a morire)
+\item Omen (visioni su specifico individuo)
+\item Forest Venegance
+\item Blessed Union (sia marriage, che alliegeance)
+\end{itemize}
+
+\pagebreak
+Good spells to turn into incantations are:
+\begin{itemize}
+\item Atonement
+\item Binding
+\item Break Enchantment
+\item Contact other Plane
+\item Control Weather
+\item Dimensional Lock
+\item Forbiddance
+\item Heroes Feast
+\item Planar Binding (chaos)
+\item Planar Binding (evil)
+\item Planar Binding (good)
+\item Planar Binding (law)
+\item Plant Growth
+\item Scrying
+\item Simulacrum
+\item Trap the Soul
+\item Raise Dead
+\item grab 'em from d20 Modern's Urban Arcana
+\end{itemize}
+
+
+
+
+\paragraph{The Desert} Distese, lande, piane sterminate, corse forsennate a cavallo, nubi di polvere, fortezza-golem (H'rab-Qalyym), strongholds arroccate sulle pendici della cordigliera, magia \`{e} una questione di legame, strapiombi, incursione Far Realm sul fondo dei burroni, ivi orrida selva alienata, portali nella roccia e segreti, antichit\`{a} esala dalle radici del suolo, corallax, creature Zendikar volatili, wurm d'oro screziato a guardia dei giardini di pietra della piramide, 
+
+
+
+
+
+\section{Xenoteurgia}
+\begin{itemize}
+\item Murmurs: litanies of madness of a chosen path learned one power at the time once leveled
+\item Breaches: open slits to Far Realm from which draws power to cast spell like a sorcerer (less powerfull)
+\item Incursions: using murmurs has alien side effects that should be banked, low HP or Will save fail this letting chaos come in
+\end{itemize}
+
+
+\subsection{Citations}
+``The best defense is a good offense. The best offense is a good explosion. The more explosions, the better the offense. My defenses must be impenetrable.''-The logic of Feld Marquo
+
+``Endings are always enigmas, unanswerable mysteries. There is only stability in the beginning.''-Greran
+
+
+
+
+
+
+\section{Eldan Magic System}
+How to bend it to my goals:
+\begin{description}
+\item[Minor] Wizards are called ``Warlocks''
+\item[Major] Include Clerics. Cantrips $\doteq$ Domain powers. Way to include the huge variety of clerical domains, unless lores being actual domains
+\item[Medium] Mental Strain Variant
+\item[Major] Raise number of available spells
+\item[Medium] Add \textit{Absurd Lore} to include Aberrant Preachers. Murmurs $\doteq$ Spells. Breaches $\doteq$ Cantrips. Incursions/Cataclysms $\doteq$ Mantras \& side effects added to Mental Strain 
+\item[Medium] Circle drawing requirements for Rituals
+\item[*] Integrate Binding for Bards
+\item[Major] Utility spells are not (Identify, Rope Trick, Animate Rope, Unseen Servant, Analyse Dweomer, Dawn, ..). If not possible to include in some lore's spell list, make them available as rituals
+\item[Major] Way to enroll druids and clerics without close out to easily divine magic to arcane practicings, Vows?
+\item[Medium] Arcanums/Cantrips for Death (shamanic: non-evil-non-good), Stars \& Depth lores: Arcanum $\simeq$ Feats (Ex), Cantrips $\simeq$ Domain powers or 1 action unlimited spells (Su)
+	\begin{itemize}
+	\item Death lore gets the Undead lore cantrip. Undead lore gains ``Horrible Life Leech'' or ``Devious Parasite'' [10+1/2 lvl + Cha or take 1 Con damage. As long as she does damage in this way undead warlock gains fast healing 3 for damage done +1 rounds. Cannot re-use the cantrip while a previous use is still active] as her cantrip 
+	\item Death (Arcanum Apprentice): Death apprentice has a profound understanding and an unnatural link with death. She is capable to control the flow of life leaving \textit{morituri} bodies. +2 Heal check in order to stabilize 
+	\item Death (Arcanum Journeyman): Warlock's spirit always swim back to his body. When reincarneted a Journeyman is the same race again
+	\item Death (Arcanum Master): Can instill a feeling of abaddon before the doom of fate. Enemies are cursed with 50\% missing action
+	\item Death (Arcanum Adept): The Death master attracks the soul of enemies. Harvesting soul deals one negative level to the victim. Drain strength: ability point. Decay of Time: one age cathegory pace. Never ages. Death's Arcangel: she doesn't age
+	\item Death (Negate Undead): ``Dead shall remain Dead'': gain Turn undead as Undeath lore gains Rebuke
+	\item Death (Fate Acceptance): Calm (emotion | animals) aura level/day. +4 Will against [mind affecting] ability. If fail save the effect are nontheless on catheogry lower
+	\item Death (Inevitable Destin): +2 on CD and to overcome SR with death lore spells
+	\item Depth (Cantrip):  
+	\end{itemize}
+\end{description}
+
+
+\subsubsection{Absurd Lore}
+\paragraph{Twisting mental strain} 
+\begin{description}
+\item[I] 
+\item[II] 
+\item[III] 
+\item[IV] 
+\item[V] 
+\end{description}
+\paragraph{Cantrip}
+Arcana \begin{description}
+\item[I] 
+\item[II] 
+\item[III] 
+\item[IV] 
+\item[V] 
+\end{description}
+Abusurd Lore Spells (ex. Mandess domain)
+\begin{description}
+\item[1st] Lesser Confusion, Hipnosys
+\item[2nd]  
+\item[3rd] Confusion, Fear
+\item[4th]  
+\item[5th]
+\item[6th] 
+\item[7th] 
+\item[8th]  
+\item[9th] Weird
+\end{description}
+
+
+\subsubsection{Fluff, flavours \& themes}
+\begin{description}
+\item[Death] Sacred, anti-undeads, righteous,  
+\item[Undeath] Prohibited, egohistic, edonistic, sadistic, experimental, blaspheme, desecrated, leech of others' essence for own 
+purposes
+\item[Depth] 
+\end{description}
+
+
+
+\section{Norse Runes Magic System}
+$\mathcal{L}$a durata \`{e} a ``concentrazione'' o dipendente dalla Runa.\\ Le categorie sono \textit{istante, minuto, alba, luna, solstizio, festa quinquenale o cometa/costellazione strana, vita del caster, vita di Hyggdrasil (permanente)}.\\
+Per rendere permanente la spesa totale va moltiplicata $\times10$. \\
+``Permanente'' \`{e} tuttavia passibile di sbiaditura.
+
+
+\begin{tabular}{| l || l  c | l c |}
+  \multicolumn{2}{c}{} \\
+  \hline
+  Rune  & Strength       & Cost & Area  		& Cost \\
+  \hline
+  FORD  & ignite mundane & 0PP  		\\
+        & ignite extreme & 1PP  		\\
+        & burn faster	 & 1PP  \\
+        & burn hotter	 & 1PP 	& touch 		& $\times1$\\
+        &				 &	    & near, circle  & $\times1$\\
+        &				 &	    & voice			& $\times2$\\ 
+        &				 &	    & sight			& $\times4$\\ 
+        &				 &	    & unlimited		& $\times7$\\         
+        & summon pire  	 & 4PP 	& 		\\
+        &  				 &  	& touch 		& $\times1$\\
+        &				 &	    & near, circle  & $\times1$\\
+        &				 &	    & voice			& $\times2$\\ 
+        &				 &	    & sight			& $\times4$\\ 
+        &				 &	    & unlimited		& $\times7$\\         
+        & dazzle	  	 & 2PP 	& 				\\
+        &  				 &  	& touch 		& $\times1$\\
+        &				 &	    & near, circle  & $\times1$\\
+        &				 &	    & voice			& $\times2$\\
+        &				 &	    & sight			& $\times4$\\ 
+        &				 &	    & unlimited		& $\times7$\\  
+  E  \\
+\hline
+\end{tabular}
+
+
+
+\subsubsection*{Note}
+\todo[inline]{Sistema a PP: la runa \`{e} uno \textit{spell} deve poter far ragionevolmente tutto e esser generale abbastanza per potersi combinar con altre}
+\todo[inline,backgroundcolor=red]{Sistema libero: la runa \`{e} un glifo attivabile. Se \`{caldo} pu\`{o} dare fuoco, se Se \`{incandescente} pu\`{o} accecare, ecc \dots Si posson far variare lievemente alcune \textsc{stat} con punti disavanzo d\% - CD di \emph{Benedire Rune}}
+
+
+
+\section*{24 Rune della Potenza di Odino}
+ 
+Queste sono le 24 Rune della Potenza diffuse tra i chierici del Pantheon Nordico. Tutti i personaggi possono imparare a riconoscere 
+queste rune, parafrasando il loro significato e capendo le loro funzioni magiche. Tuttavia, solo chi \`{e} ispirato dal sacrificio e 
+dalla comunione con l'immortale (attraverso il rituale per conoscere le rune) pu\`{o} comprendere totalmente e invocare il potere di queste 
+rune.
+ 
+Quando attiva una runa con l'incantesimo benedire le rune, il chierico deve menzionare esplicitamente quale dei poteri elencati per quella runa decide di invocare; il potere rimane attivo per 10 round (a meno che la descrizione dell'effetto indichi diversamente). Infine, a meno che non sia diversamente specificato, solo gli esseri dotati di intelligenza superiore a quella animale possono evitare gli effetti di una runa eseguendo con successo un TS Incantesimi.
+ 
+Altre Rune: Ci sono molte altre rune della potenza, e altri poteri di queste rune possono essere appresi attraverso avventure. Queste 
+rune sono di propriet\`{a} degli Immortali e possono essere concesse solo come ricompensa per i servigi resi. Quando vengono scoperte, 
+queste rune non possono essere comprese senza una speciale conoscenza (come la spiegazione data direttamente da chi l'ha incisa, o 
+un'intensa ricerca scolastica, o un'ispirazione divina). Per invocare il potere di una runa, il chierico deve capire quali diversi 
+effetti la runa pu\`{o} produrre e richiedere specificamente l'effetto desiderato quando benedice la runa.
+ 
+Un sacerdote disperato pu\`{o} provare a invocare una runa di cui non conosce i poteri. Se il sacerdote \`{e} un PG, il giocatore pu\`{o} dire al 
+DM quale effetto magico sta cercando di invocare. Se quest'effetto \`{e} in qualche modo correlato con il potere della runa, ci potrebbe 
+essere una possibilit\`{a} che la runa venga attivata. Normalmente non dovrebbe succede nulla; occasionalmente pu\`{o} accadere qualcosa di 
+positivo, oppure di negativo (a discrezione del DM in base alla situazione e alla fedelt\`{a} del sacerdote). Invocare una runa senza la 
+specifica conoscenza dei suoi poteri \`{e} un atto caotico e non deve essere preso con leggerezza.
+ 
+Ad un personaggio pu\`{o} essere eccezionalmente concessa dagli immortali una propria runa personale. \`{e} un segno di grande rispetto, spesso 
+un segno che un grande destino attende il personaggio. Generalmente quel destino pu\`{o} essere tanto una maledizione quanto una 
+benedizione.
+ 
+ 
+ 
+\subsection*{Algir (l'Alce)} 
+Questa runa indica la protezione.
+ \begin{itemize}
+\item       L'oggetto inscritto con questa runa attivata si considera come di una categoria di durezza maggiore (scegliere il \textit{feel} del nuovo materiale come meglio si crede) per la durata dell'incantesimo.
+ 
+\item       Il possessore della runa riceve un bonus su tutti i Tiri Salvezza contro la magia.
+ 
+\item       Un'arma inscritta con questa runa attivata para automaticamente un singolo attacco al round per la durata dell'incantesimo.
+ Il giocatore deve scegliere quale attacco intende parare prima dei tiri per colpire e ferire.
+ 
+\item		L'incantatore pu\`{o} guscio tartaruga
+ \end{itemize}
+ 
+ 
+ 
+\subsection*{As (gli Immortali)}
+ 
+Questa runa indica gli Immortali e i loro reami celesti oltre il Primo Piano.
+  \begin{itemize}
+\item       Rivela la reale forma di creature magicamente camuffate entro il raggio visivo del possessore della runa, in particolare demoni, immortali e svariate creature provenienti dall'esterno del Primo Piano.
+ 
+\item       Crea un cerchio di protezione che impedisce ai demoni di entrare nel cerchio.
+ 
+\item       Conferisce un bonus ad una cartteristica per la durata dell'incantesimo.
+ \end{itemize}
+ 
+ 
+\subsection*{Berkana (la Betulla)}
+ 
+Questa runa indica la durevole vitalit\`{a} della betulla.
+  \begin{itemize}
+\item       Se non si indossa nessuna armatura, la pelle diventa resistente come la corteccia, aumentando la CA naturale (a 6). Indossare qualsiasi altra armatura (incluse le armature magiche) nega i suoi benefici, ma si pu\`{o} usare lo scudo. Per la durata dell'effetto si subiscono 1 volta e mezzo i danni da fuoco.
+ 
+\item       Il possessore della runa subisce met\`{a} danno da un attacco fisico o magico. L'individuo pu\`{o} scegliere di subire met\`{a} danno dopo aver saputo l'entit\`{a} del danno provocato dall'attacco. La runa cessa di essere attiva immediatamente dopo questo effetto (anche se non sono passati 10 round).
+ 
+\item        Il possessore della runa recupera automaticamente 19 Punti Ferita. La runa cessa di essere attiva immediatamente dopo questo effetto (anche se non sono passati 10 round).
+ \end{itemize}
+ 
+ 
+\subsection*{Dagar (il Giorno)}
+ 
+Questa runa indica i poteri della luce e delle tenebre.
+  \begin{itemize}
+\item       La runa brucia fino ad emanare una luce potente quanto quella solare per 10 round (senza tuttavia produrre altrettanto calore). Tutte le zone entro la linea visiva dalla posizione della runa vengono illuminate completamente, fino ad una distanza di 60 metri. Quest'effetto magico non viene influenzato dalle forme invertite degli incantesimi luce magica e luce persistente. La potenza pu\`{o} essere cosnumata in un signolo round per accecare temporaneamente le creature nel raggio di 9 metri.
+ 
+\item       Riduce tutte le sorgenti luminose artificiali e magiche entro 36 metri dalla runa all'$1\%$ della loro effettiva intensit\`{a} ($99\%$ di oscurit\`{a}). Tutti gli attacchi subiscono una penalit\`{a} di $-1$.
+ 
+\item        Permette al possessore della runa di vedere nel buio come se possedesse scurovisione 18 metri.
+ \end{itemize}
+ 
+ 
+\subsection*{Ehwar (il Cavallo)}
+ 
+Questa runa indica l'empatia con la cavalcatura e la maestria nel cavalcare.
+  \begin{itemize}
+\item       Il possessore della runa pu\`{o} entrare nella mente di un cavallo per la durata dell'incantesimo, percependo tutto ci\`{o} che il cavallo percepisce coi suoi sensi.
+ 
+\item       Il possessore della runa riesce automaticamente in tutti i tiri sull'abilit\`{a} Cavalcare.
+ 
+\item        Il possessore della runa pu\`{o} evocare un particolare cavallo che si trovi entro un raggio di 1.6 km. Se il cavallo lo conosce bene ed \`{e} stato trattato con rispetto, risponder\`{a} all'evocazione immediatamente: arriver\`{a} il prima possibile, combattendo con altre creature e rischiando la propria vita in manovre ardite se necessario. Se invece si evoca un cavallo sconosciuto, esso non correr\`{a} alcun rischio per rispondere all'evocazione del possessore della runa e arriver\`{a} con calma.
+ \end{itemize}
+ 
+ 
+\subsection*{Fehu (il Bestiame)}
+ 
+Questa runa indica la ricchezza. Gli uomini del nord calcolano la ricchezza in termini di quanto bestiame possiedono.
+  \begin{itemize}
+\item       Indica la presenza di un tesoro nel raggio di 27 metri.
+ 
+\item       Indica la direzione di un prezioso specificamente indicato.
+ 
+\item        Scherma un tesoro dall'individuazione magica.
+ 
+\item        Rivela il possessore di un oggetto che porta una runa della potenza.
+ \end{itemize}
+ 
+ 
+\subsection*{Gefu (il Dono)}
+ 
+Questa runa indica la generosit\`{a} e l'ospitalit\`{a}
+  \begin{itemize}
+\item       Provoca una reazione positiva da parte di creature intelligenti alla richiesta di cibo, vestiti e alloggio.
+ 
+\item       Provoca una reazione positiva da parte di individui ostili o vendicativi, di fronte all'offerta di doni o di scuse come compenso al torto o alle offese subite.
+ \end{itemize}
+ 
+ 
+\subsection*{Hagla (la Natura Crudele)}
+ 
+Questa runa indica il lato distruttivo e violento della natura.
+  \begin{itemize}
+\item       Crea un singolo fulmine magico che provoca 3d6 punti di danno.
+ 
+\item       Crea una violenta tempesta di vento e pioggia in un raggio di 36 metri, centrata sulla runa. Le creature all'interno dell'area d'effetto devono eseguire una prova di Forza (o di Destrezza se pi\`{u} appropriato) ogni round per poter eseguire le proprie azioni normalmente. Un fallimento del tiro significa che durante quel round non si pu\`{o} intraprendere alcuna azione. Il possessore della runa non pu\`{o} fare altro che concentrarsi per la durata dell'effetto.
+ \end{itemize}
+ 
+ 
+\subsection*{Ihwar (il Cacciatore)}
+ 
+Questa runa indica l'abilit\`{a} di seguire tracce, disporre trappole e uccidere la selvaggina.
+  \begin{itemize}
+\item       Le armi da lancio e da tiro su cui questa runa viene incisa guadagnano un bonus di $+2$ al Tiro per Colpire (ma essa non le rende magiche).
+ 
+\item       Piccole trappole e trabocchetti incisi con questa runa permettono al possessore della runa di catturare piccole creature (al massimo 9 kg) senza ferirle. Se viene indicata una specie normalmente attiva nell'habitat in cui viene posta la trappola, la creatura sar\`{a} attirata nella trappola entro 24 ore. Se viene indicata una creatura che non vive nella zona, la runa non ha effetto.
+ 
+\item        Per la durata dell'incantesimo, il possessore della runa pu\`{o} seguire le tracce di qualsiasi creatura, indipendentemente dalla superficie su cui \`{e} passata o da tentativi fisici e magici di nascondere il sentiero.
+ \end{itemize}
+ 
+ 
+\subsection*{Ingwar (la Crescita)}
+ 
+Questa runa indica il potere della crescita nelle cose naturali.
+ \begin{itemize}
+\item       Le piante normali crescono fino a riempire una semisfera centrata sulla runa di raggio \item5 metri. Questa crescita innaturale provoca nelle piante la deformazione, il collasso e l'attorcigliamento, creando una formidabile barriera verso chi vuole raggiungere la runa o bloccando uno stretto sentiero. L'effetto procede per incrementi per i 10 round dell'incantesimo, terminando nel round finale. Le piante rimangono enormi e distorte fino a che non vengono distrutte o muoiono naturalmente.
+ 
+\item       Una singola pianta o un oggetto fatto di materiali vegetali cresce fino a cinque volte rispetto le sua altezza originale e due volte rispetto alla larghezza in un round. Inoltre un bastone, una corda di canapa o una camicia di cotone possono crescere di dimensione come fossero piante o viticci.
+ 
+\item        Un animale naturale cresce fino al doppio delle sue dimensioni in un round. La creatura pu\`{o} muoversi solo alla met\`{a} della sua normale velocit\`{a} e ha Destrezza dimezzata, ma i suoi Punti Ferita, i danni e la capacit\`{a} di carico sono raddoppiati.
+ \end{itemize}
+ 
+ 
+\subsection*{Isar (il Ghiaccio)}
+ 
+Questa runa indica il ghiaccio e il freddo.
+ \begin{itemize}
+\item       Congela una superficie d'acqua di 9 metri quadri, spessa abbastanza da reggere il peso di un uomo normale. Se viene formata in acque molto movimentate, il ghiaccio diventa una zattera di ghiaccio e galleggia seguendo la corrente. Al termine dell'incantesimo, il ghiaccio si scioglie in 1d10 round (indipendentemente dalla temperatura e dalle condizioni).
+ 
+\item       Provoca una piccola tempesta di grandine di 3 metri di diametro, entro 18 metri dalla runa. Le creature all'interno dell'area d'effetto subiscono 3d6 punti di danno.
+
+\item 		La superficie su cui \`{e} incisa la runa diviene estremamente fredda e si copre di brina e un sottile strato di ghiaccio.
+\end{itemize} 
+ 
+ 
+\subsection*{Jarn (la Natura Feconda)}
+ 
+Questa runa indica l'abbondanza della natura selvaggia (in opposizione agli animali domestici e ai raccolti).
+  \begin{itemize}
+\item       Il possessore della runa sa istintivamente se animali o piante siano commestibili o velenosi (ci\`{o} include le piante e gli animali naturali di superficie e quelli appartenenti ad ambienti sotterranei).
+ 
+\item       Indica la direzione di una specifica specie di pianta conosciuta dal possessore della runa che ha propriet\`{a} magiche o curative. Il massimo raggio d'azione \`{e} 1.6 km.
+ \end{itemize}
+ 
+ 
+\subsection*{Kaunna (il Fuoco)}
+ 
+Questa runa indica il calore del focolare domestico, la luce rischiarante della torcia ed il potere distruttivo del fuoco selvaggio.
+  \begin{itemize}
+\item       La runa brucia come una torcia per due ore, ma non consuma il materiale su cui \`{e} inscritta. Il fuoco brucia anche in caso di pioggia intensa, ma non sott'acqua.
+ 
+\item       La runa brucia intensamente per la durata dell'incantesimo. Se si effettua con successo un Tiro per Colpire con l'oggetto su cui \`{e} posta la runa, il bersaglio (o la vittima) subisce 3d4 punti di danno per il fuoco.
+ \end{itemize}
+ 
+ 
+\subsection*{Agur (l'Acqua)}
+ 
+Questa runa indica la protezione dall'affogamento e dalla forza selvaggia del mare.
+  \begin{itemize}
+\item       Il possessore della runa pu\`{o} respirare sott'acqua.
+ 
+\item       Il possessore della runa pu\`{o} galleggiare sulla superficie dell'acqua, senza riguardo per l'ingombro personale. Egli pu\`{o} inoltre tenere a galla un'altra persona oltre a s\'{e}, ammesso che questa non abbia con s\'{e} oggetti per un ingombro superiore alle 600 monete (30 kg).
+ 
+\item        Una runa attivata incisa nella prora di una nave la protegge dall'affondamento per 1d10 turni. Essa non protegge i membri dell'equipaggio dalle condizioni circostanti.
+ 
+\item        Una runa attivata incisa su di un bastone di legno manterr\`{a} una persona non ingombrata (con meno di 200 monete -- 10 kg) a galla per 24 ore, anche se non protegger\`{a} la persona dagli elementi.
+
+\item		Una runa incisa su un contenitore pieno di acqua la preserva anche se essa viene bevuta e la inoltre potabile se non lo \`{e} gi\`{a}.
+ \end{itemize}
+ 
+ 
+\subsection*{Mannar (l'Uomo)}
+ 
+Questa runa indica la conoscenza e la saggezza terrena.
+  \begin{itemize}
+\item       Il possessore della runa pu\`{o} conoscere le vere intenzioni e l'allineamento di un individuo sconosciuto; l'effetto si pu\`{o} ripetere su un individuo diverso ogni round.
+ 
+\item       Il possessore della runa pu\`{o} cercare nella mente di un altro essere umano la risposta ad una domanda. Se il soggetto conosce la risposta, il personaggio la viene a sapere. Se il soggetto non conosce la risposta, il personaggio non pu\`{o} attingere ad altre informazioni. Pi\`{u} complicata \`{e} la domanda, pi\`{u} incerta, inattendibile e oscura \`{e} la risposta che riceve il possessore della runa.
+ 
+\item        Afferrando un oggetto appartenuto ad un altro umano, il possessore della runa pu\`{o} sapere in quale direzione viaggiare per trovarlo. Il personaggio non ha il senso della distanza, solo della direzione. La runa cessa di essere attiva immediatamente dopo questo effetto (anche se non sono passati 10 round).
+ \end{itemize}
+ 
+ 
+\subsection*{Naudir (il Bisogno Disperato)}
+ 
+Questa runa indica un grande pericolo e la fortuna che serve a evitarlo.
+  \begin{itemize}
+\item       Permette al possessore della runa di ritardare gli effetti di un singolo attacco fisico fino al termine dell'incantesimo. Il possessore della runa deve indicare l'attacco che vuole evitare prima che vengano fatti i tiri per colpire e per le ferite. Gli effetti dell'attacco vengono ritardati sino al termine della durata dell'incantesimo.
+ 
+\item       Permette al possessore della runa di muoversi al doppio della sua velocit\`{a} normale per la durata dell'incantesimo. Egli acquista velocit\`{a} di scavare e nuotare 6 metri qualora non le possieda, altrimenti le raddoppia.
+
+\item		Permette al possessore della runa di compiere una azione in pi\'{u} per round.
+ 
+\item       Conferisce al possessore della runa un bonus di $+2$ a tutti i Tiri Salvezza per la durata dell'effetto.
+ \end{itemize}
+ 
+ 
+\subsection*{Odala (il Diritto di Nascita)}
+ 
+Questa runa indica potere sul fato ordinato dagli Immortali.
+  \begin{itemize}
+\item       Durante i 10 round di durata dell'incantesimo, il possessore della runa pu\`{o} permettere ad un'altra creatura (non a s\'{e} stesso) di ignorare l'effetto di un attacco che la ridurrebbe ad un numero negativo di Punti Ferita o che causerebbe la sua morte per veleno o per magia.
+ 
+\item       Il possessore della runa pu\`{o} ignorare l'effetto di un attacco che lo ridurrebbe ad un numero negativo di Punti Ferita o che causerebbe la sua morte per veleno o magia. La runa non necessita di essere attivata, ma il possessore della runa deve avere nella sua mano l'oggetto inscritto con la runa e deve essere in grado di pronunciare l'incantesimo benedire le rune (quindi egli deve conoscere la preghiera, non deve aver esaurito i suoi incantesimi di secondo livello per quel giorno, deve essere cosciente e in grado di parlare per formulare la magia che attiva l'incantesimo). Quest'azione viene eseguita automaticamente, indipendentemente dalle altre azioni intraprese dal possessore della runa durante quel round.
+ \end{itemize}
+ 
+ 
+\subsection*{Pethru (il Mistero)}
+ 
+Questa runa indica l'occultamento e la conoscenza nascosta.
+  \begin{itemize}
+\item       Chi si trova entro 18 metri dal possessore della runa non lo nota, come se effettivamente non si trovasse l\`{i}. Anche se chi osserva ci va a sbattere contro o vede un'altra prova evidente della sua presenza (ombre od oggetti lanciati che interrompono all'improvviso il loro volo), non riconosce l'apparenza dell'evidenza. Chi osserva la scena da oltre 18 metri non \`{e} influenzato da quest'effetto.
+ 
+\item       I messaggi scritti in runico sono permanentemente nascosti alla vista se accompagnati dall'attivazione di questa runa all'interno del messaggio. Il messaggio pu\`{o} essere letto solo dopo l'attivazione di un'altra runa Pethru entro la linea visiva del messaggio nascosto.
+ 
+\item        Il possessore della runa viene allertato della presenza di creature invisibili entro un raggio di 18 metri, senza per\`{o} vederle. Il possessore della runa non conosce la distanza o la posizione dell'essere invisibile: la sola indicazione della presenza dell'essere \`{e} il brillante e intensificato bagliore della runa attivata.
+
+\item 		Il possessore della runa pu\`{o} fars\'{i} che un ogetto toccato appaia illusoriamente come un altro oggetto della medesima taglia presente nel campo di vista.
+ \end{itemize}
+ 
+ 
+\subsection*{Raidu (il Viaggio)}
+ 
+Questa runa indica il viaggiatore.
+\begin{itemize}
+ \item       Per un periodo di sei ore, il possessore della runa si desta dal sonno se un nemico o una creatura con intenzioni ostili si avvicina entro 30 metri.
+
+\item       Se il possessore della runa si \`{e} perso, o la via da seguire non \`{e} chiara a causa dell'oscurit\`{a} a del cattivo tempo atmosferico, il possessore della runa sa istintivamente in quale direzione viaggiare per raggiungere la sua destinazione (anche se non ha idea riguardo la distanza da percorrere).
+ 
+\item        Per un periodo di sei ore il possessore della runa riceve un bonus di $+2$ alle prove di Costituzione eseguite per contrastare la fatica o pericoli dovuti alle condizioni atmosferiche.
+ \end{itemize}
+ 
+ 
+\subsection*{Sowelu (il Sole)}
+ 
+Questa runa indica la guarigione e la buona salute.
+ \begin{itemize}
+\item       Un incantesimo curativo lanciato dal possessore della runa cura automaticamente il massimo numero possibile di punti ferita. La runa cessa di essere attiva immediatamente dopo questo effetto (anche se non sono passati 10 round).
+ 
+\item       Guarisce dalla morte recente. Se viene toccata dalla runa attivata, la vittima perde permanentemente 1 punto di Costituzione e risale a 1 Punto Ferita. La vittima deve essere stata ridotta sotto gli 0 PF da meno di 10 round da quando la runa tocca il cadavere. Se la vittima \`{e} stata ridotta a $-11$ Punti Ferita o peggio, la runa non ha alcun effetto.
+ \end{itemize}
+ 
+ 
+\subsection*{Thurs (il Gigante)}
+ 
+Questa runa indica le razze dei giganti.
+  \begin{itemize}
+\item       Provoca una reazione favorevole al possessore della runa da parte delle creature gigantesche ($+2$ al tiro sulle reazioni).
+ 
+\item       Provoca la paralisi di un gigante; la creatura pu\`{o} eseguire un TS Incantesimi ogni round per superare la costrizione.
+ 
+\item        Il possessore della runa cresce fino alle dimensioni di un gigante delle colline. Il possessore della runa in pratica diventa temporaneamente un gigante delle colline, con tutte le abilit\`{a} e debolezze correlate (incluse la stupidit\`{a}, la ferocia e la natura brutale del gigante). I vestiti e l'armatura del personaggio possono essere distrutti durante la trasformazione. Le normali armi umane sono inutilizzabili.
+ \end{itemize}
+ 
+ 
+\subsection*{Tiwar (la Guerra)}
+ 
+Questa runa indica la forza e il valore nelle armi.
+ \begin{itemize}
+\item       Un'arma inscritta con questa runa colpisce automaticamente provocando il massimo danno. La runa cessa di essere attiva immediatamente dopo questo effetto (anche se non sono passati 10 round).
+ 
+\item       Il portatore della runa ignora gli effetti della paura.
+ 
+\item        Riduce di un punto il morale di chiunque attacchi il portatore della runa e si trovi entro un raggio di 3 metri.
+ \end{itemize}
+ 
+ 
+\subsection*{Urur (il Bisonte)}
+ 
+Questa runa indica la forza di un animale selvaggio.
+ \begin{itemize}
+\item       Provoca la paralisi di un animale selvaggio ostile.
+ 
+\item       Dona al possessore della runa la forza di un orso (Forza 18).
+ 
+\item       Attrae l'attenzione di tutti i nemici in un raggio di 9 metri e fa in modo che attacchino il possessore della runa anzich\`{e} i suoi compagni (come il bisonte che sfida un branco di lupi per proteggere la mandria).
+
+\item		Pu\`{o} indurre uno stato di berserk in un individuo a portata di voce.
+ \end{itemize}
+ 
+ 
+\subsection*{Wunju (la Gioia)}
+ 
+Questa runa indica la felicit\`{a} e la gioia di vivere.
+  \begin{itemize}
+\item       Provoca la reazione positiva del pubblico ad una storia o una canzone ($+2$ al tiro sulle reazioni).
+ 
+\item       Provoca la reazione positiva di un ascoltatore alla richiesta di aiuto ($+4$ al tiro sulle reazioni).
+ 
+\item       Tutte le creature nel raggio di 6 metri smettono temporaneamente di combattere. Le creature che effettuano con successo un TS Incantesimi mentali possono resistere agli effetti della runa, mentre le creature oltre il raggio di 6 metri non vengono influenzate.
+\end{itemize}
+
+
+\paragraph{Potenza e attributi variabili delle Rune:}
+nel formato $\bigvee X \mbox{punti scarto; incrementa} \ldots$
+\begin{tabular}{l || c c}
+\hline
+\textit{Rune}  & \textit{Power}    \\
+\hline
+Algir   &      \\
+As      &      \\
+Berkana &      \\
+Dagar   &      \\
+Ehwar   &      \\
+Fehu    &      \\
+Gefu    &      \\
+Hagla   &      \\
+Forza   &      \\
+Ihwar   &      \\
+Ingwar  &      \\
+Isar    &      \\
+Jarn    &      \\
+Kaunna  &      \\
+Agur    &      \\
+Mannar  &      \\
+Naudir  &  3    \\
+Odala   &  4    \\
+Pethru  &  2    \\
+Raidu   &  1    \\
+Sowelu  &  4    \\
+Thurs   &  2    \\
+Tiwar   &  3   \\
+Urur    &  2    \\
+Wunju   &  1    \\
+\hline
+\end{tabular}
+
+\subsubsection*{Rituali Runici}
+Ogni caster in aggiunta a quello principale contribuisce alla Prova del cater principale con (10 + X - la sua Prova) dove X \`{e} il numero di caster.\\
+\begin{tabular}{l || c | c | c | c | c || l}
+\hline
+\textit{Rituale} & \textit{Rune coinvolte}  &  \textit{Practitioners} &  \textit{Focus} &  \textit{Misc} &  \textit{variabili} & \textit{Effetto} \\
+Freya's Warm Hut & SOW, BER & 2+ & incenso & in una capanna &  +1 costa 1 PP & \ldots \\
+& & &  &  &  & \ldots \\
+
+\hline
+\end{tabular}
+
+
+\subsection{Environmental Attuenment}
+PP for rune sorceries can be drawn from near envirnment. Bonfire for FireRune, Watrer bodies for WaterRune ecc.\\
+Runes can be  ``prepared'' multiple time consequently, in order enhance their effects.
+
+
+
+\section{\textsc{Ars Arcana}-like spells}
+These spells are designed to be used with my not-yet-baptised-RPG-system. Long story short, there's no mana expenditure to cast spells, the difficulty check is made summing results of every concentration round until success; thus, potentially, every warlock can cast any spell, no matter how powerfull it is (I say potentially because some strain cost must be paid for every partial failure).
+
+Mist of Daggers ()\\
+Robe of the Unseen (target is invisible, but he can still be smelled, heard, can leave footprints and so on)\\
+Robe of the Astral Wanderer (target is practically unspottable, he resides in the astral plane to obtain invisibility)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

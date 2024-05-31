@@ -1,0 +1,54 @@
+\documentclass[10pt,a4paper]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+%----------------------------------
+\newcommand{\dd}{
+\hspace{-10pt}
+\includegraphics[scale=0.1]{ten-side-dice-gray-md.png}
+}
+\newcommand{\dg}{
+\hspace{-10pt}
+\includegraphics[scale=0.1]{ten-side-dice-green-md.png}
+}
+\newcommand{\db}{
+\hspace{-10pt}
+\includegraphics[scale=0.1]{ten-side-dice-blue-md.png}
+}
+\newcommand{\dr}{
+\hspace{-10pt}
+\includegraphics[scale=0.1]{ten-side-dice-red-md.png}
+}
+\newcommand{\dk}{
+\hspace{-10pt}
+\includegraphics[scale=0.1]{ten-side-dice-black-md.png}
+}
+%------------------------------------
+\title{Legend of the Wulin Revisited}
+\author{fràx}
+
+\begin{document}
+\maketitle
+
+\section*{Stats}
+\subsection*{Primary}
+\begin{itemize}\itemsep -5pt
+\item Potenze (POT) \quad \dd \db \dg
+\item Possanza (POS) \quad \dd \db \dg \dr \dg 
+\item Prontezza (PRO) \quad \dd \dk \dg \dr 
+\item Percezione (PER) \quad \dd \db 
+\item Psiche (PSI) \quad \dd \db \dk
+\end{itemize}
+
+\subsection*{Secondary}
+\begin{itemize}\itemsep -5pt
+\item Size (SIZ) \quad \dd
+\item Contact (CNT) \quad \db
+\item Zeal (ZEA) \quad \dg
+\item \dots \quad \dr
+\end{itemize}
+
+\tikz \filldraw[orange] (0,0) circle (5pt);
+A sine \tikz \draw[x=1ex,y=1ex] (0,0) sin (1,3.14); curve.
+\end{document}

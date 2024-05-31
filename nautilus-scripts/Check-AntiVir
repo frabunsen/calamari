@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for arg do
+	if [ -f "$arg" ]; then
+		clamscan $arg | zenity --text-info --height=500 --width=400 --title="Clamscan: $(basename -- $arg)"
+	fi
+done	 

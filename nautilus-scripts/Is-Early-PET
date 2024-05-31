@@ -1,0 +1,20 @@
+#!/bin/bash
+
+for arg do
+ STA=$(dcmdump $arg|grep RadiopharmaceuticalStart*Time|grep -Eo \[[0-9.]+\] | tr -d "[|]"|cut -d"." -f 1)
+ ACQ=$(dcmdump $arg|grep AcquisitionTime|grep -Eo \[[0-9.]+\] | tr -d "[|]"|cut -d"." -f 1)
+
+ STA=$(echo ${STA:0:2}:${STA:2:2}:${STA:4:6})
+ ACQ=$(echo ${ACQ:0:2}:${ACQ:2:2}:${ACQ:4:6})
+
+ DDI=$(echo "( `date -d $ACQ +%s` - `date -d $STA +%s`) / (60)" | bc)
+ #echo DDI=$DDI
+
+ if [[ "$DDI" -lt 12 ]]; then
+ 	 zenity --info --text="DDI=$DDI\nEarly image!"
+	 #echo "Early image!"
+ else
+ 	zenity --info --text="DDI=$DDI\nLate image!"
+ 	#echo "Late image!"
+ fi
+done

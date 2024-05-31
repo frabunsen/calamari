@@ -1,0 +1,678 @@
+\documentclass[a4paper,landscape]{article}
+
+
+%%%%%%%%%%%%%%%
+% GEOMETRIA	  %
+%%%%%%%%%%%%%%%
+\usepackage[margin=6mm,top=5mm]{geometry}
+
+%%%%%%%%%%%%%%%
+% LINGUA	  %
+%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+%\usepackage[german]{babel}
+
+%%%%%%%%%
+% TESTO	%
+%%%%%%%%%
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%%%%%%%
+% TIKZ	%
+%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+
+%%%%%%%%%
+% TWEAK 	%
+%%%%%%%%%
+\hyphenation{Alternately}
+
+
+\usepackage{ifthen}
+
+%%%%%%%%%
+% DING	%
+%%%%%%%%%
+\usepackage{pifont}
+
+
+\input{runetikzcards.tex}
+
+\begin{document}
+
+\begin{center}
+    \pagestyle{empty}
+
+%   V-Space-Korrektur bei langen Titeln
+%   \cardtitle{\vspace{-5mm}SEHR LANGER TITEL}
+%%
+    \begin{tikzpicture}
+        \cardbackground{seeing}
+        \cardtypeSigil
+        \cardtitle{Seeing}
+        \cardcontent
+        {You may use this Rune to view through, as if your eyes were placed wherever this rune is.}
+        {The rune grants you darkvision depth equal to your Intelligence score.}
+        {The rune allows you to hear as if your ears were placed wherever the rune is placed.}
+        {}
+        {}
+        {C'è polvere quì.\begin{flushright}--Dorine Tzcharran, Tomb tief\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{body}
+        \cardtypeDweomAsc
+        \cardtitle{Greatness of the Body}
+        \cardcontent
+        {The target gains a bonus to either Dexterity, Strength, or Constitution, chosen at the beginning of the day. This bonus is equal to $1+$\xmote invested in this Rune. Motes invested may not be for other Runes, Depths, or Patterns.}
+        {The size of the target increases by 1 cathegory.}
+        {}
+        {}
+        {}
+        {Luke, I'm thy vater.\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}    
+    \begin{tikzpicture}
+        \cardbackground{cold}
+        \cardtypeDweomer
+        \cardtitle{Cold}
+        \cardcontent
+        {You can lower the temperature in the area by one step each \onemote. If you target instead an object its hardness is decreased by 1.}
+		{When you activate the Cold Rune, you deal a number of d6 of cold damage equal to your level.}
+		{Your target is \textit{slowed}.}
+		{Your target is \textit{immobilized}.}
+		{}
+        {Brr.\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}   
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{void}
+        \cardtypeSigil
+        \cardtitle{Void}
+        \cardcontent
+		{This rune controls entropy. It depletes 1 cubic decimeter per level of non-living, non-magical unattended 
+		matter. The portion instantly crumbles into dust or into fragments of the appropriate kind. Targeting 
+		objects that have hardness costs 1 additional mote.}
+		{No Saving throw is allowed even for wielded mundane objects.}
+		{The rune functions as per disintegrate spell.}
+        {}
+        {}
+        {Uops!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}    
+        \begin{tikzpicture}
+        \cardbackground{water}
+        \cardtypeDweomer
+        \cardtitle{Element of Water}
+        \cardcontent
+		{This rune ensures the target to swallow in any body of water.}
+		{Any container the rune is carved upon shatters if filled with poisonous liquid.}
+		{Water springs calmly from the designed point at the rhythm of Intelligence modifier liters per round. You must be able to see
+		this location.}
+		{}
+		{}
+        {Bleah!It smells like swamp water!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture} 
+    \hspace{5mm}   
+    \begin{tikzpicture}
+        \cardbackground{acid}
+        \cardtypeDweomer
+        \cardtitle{Element of Acid}
+        \cardcontent
+		{An Acidic Rune deals a number of d6 of acid damage equal to your level.}
+		{Acidic damage can disfigure targets applying a -1 penalty to Charisma checks per 2 dices rolled until wounds are properly treated.}
+		{}
+		{}
+		{}
+        {It's a G-Cube!Run!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}    
+        \begin{tikzpicture}
+        \cardbackground{fire}
+        \cardtypeDweomer
+        \cardtitle{Element of Fire}
+        \cardcontent
+        {Target material is one step more flammable, or has a one step lower melting temperature for each \onemote.}
+        {You control fires size and brightness.}
+		{When you activate the Fire Rune, it deals a number of d6 of fire damage equal to your level.}
+        {Your target must make a Fortitude Save or take 1d4 fire damage every turn after the first one.} 
+		{Your target must make a Fortitude Save, with penalty equal to your Intelligence Modifier, or be blinded.}
+        {Brun baby, burn!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}    
+ 	\hspace{5mm}   
+    \begin{tikzpicture}
+        \cardbackground{calling}
+        \cardtypeDweomer
+        \cardtitle{Calling}
+        \cardcontent
+		{You may summon a single Creature whose CR is equal to the number of Motes you expend with this Rune. Motes expended may not be for other Runes, Depths, or Patterns.}
+		{}
+		{}
+		{}
+		{}
+        {(Whistle)\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}    
+        \begin{tikzpicture}
+        \cardbackground{stone}
+        \cardtypeDweomer
+        \cardtitle{Element of Terra}
+        \cardcontent
+		{Your natural attacks using Stone Rune deal a number of d6 of blunt damage equal to your level. Alternately this Rune can hold targets pinned to the ground on failed grapple check. The rune has grapple score equal to 4 (size modifier) 
+		plus your Intelligence score, plus your level, plus \xmote.}
+	    {Attacks imbued with this Rune cause grievous injuries.}
+		{Target object's or creature's weight is doubled.}
+		{}
+		{}
+        {Sturdy as boulder.\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}   
+    \hspace{5mm}   
+    \begin{tikzpicture}
+        \cardbackground{beacon}
+        \cardtypeSigil
+        \cardtitle{Beacon}
+        \cardcontent
+		{If your target fails the Will save against this rune, you know where the targeted object or creature is at all times. If you invest \twomote, the rune prevents attack miss chance, cover and invisibility penalty against the target of your Beacon.}
+		{}
+		{}
+		{}
+		{}
+        {I can see it!It's down there\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}    
+      \begin{tikzpicture}
+        \cardbackground{telekinesis}
+        \cardtypeSigil
+        \cardtitle{Telekinesis}
+        \cardcontent
+		{You are able to move target object or creature you carve the rune on. Controlling the spell is a full round 
+		action. You can deploy a strength of 6 (it counts as applied by a small sized creature) on your target. Any 
+		Mote expended in addition increases the strength score by your Intelligence modifier (every +6 results in a 
+		size category advancement). Tossing objects as a ranged attack uses your Intelligence instead of Dexterity 
+		score (if higher) and base attack equal to your level.}
+		{You better your control on the target. You can force it to execute complex or subtle movements (e.g. skill 	
+		checks with your ranks).}
+		{You control the spell as a move action.}
+		{You control the spell as a free action.}
+		{}
+        {Now choke, puny human beeing\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}   
+    \hspace{5mm}   
+    \begin{tikzpicture}
+        \cardbackground{vampire}
+        \cardtypeSigil
+        \cardtitle{Vampire}
+        \cardcontent
+		{You can evolve the Afflict Rune into a Vampiric Rune. Energy loosed by creatures tageted by Vampiric runes is gained by you.}
+		{}
+		{}
+		{}
+		{}
+        {Come vampiiri\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}    
+    \begin{tikzpicture}
+        \cardbackground{sun}
+        \cardtypeDweomer
+        \cardtitle{Sun}
+        \cardcontent
+		{Fire Rune ascends into Sun Rune. Sun runes functions a \textit{horrid whilthing} spell effect.}
+		{}
+		{}
+		{}
+		{}
+        {Beware the scarred lands\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{3}
+        \cardborder
+    \end{tikzpicture}    
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{afflict}
+        \cardtypeSigil
+        \cardtitle{Afflict}
+        \cardcontent
+		{Those who are affected by Afflict Rune get a -2 morale penalty to Ability Checks, Saving Throws and Attack 
+		Rolls for the duration of the spell. For each \onemote\hspace{1pt} you can add your Intelligence modifier to 
+		the penalty. For each \twomote\hspace{1pt} the penalty can be extended to target Ability scores.}
+	    {Target becomes exhausted. Alternately any wound caused to the target to keeps bleeding 1 damage for next 
+	    1d3 rounds.}
+		{(The Rune can affect target senses (e.g. sight, hear, dreams) or its extraordinary quality. Alternately 
+		it may contract a disease of your choice. The disease is non-magical unless you pay \twomote. The 
+		investement 	of \onemote\hspace{1pt} make the disease contagious.}
+		{Supernatural abilities can be targeted.}
+		{}
+        {Ehi it hurts\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}    
+    \begin{tikzpicture}
+        \cardbackground{undead}
+        \cardtypeDweomer
+        \cardtitle{Undeath}
+        \cardcontent
+		{This rune can impress one creature with one obsession. Alternately this rune deals a number of d6 of 
+		Negative Energy damage equal to your level, minus 1. If you invest \onemote, those who are knocked 
+		unconscious by this ability are considered to be dead. If you invest \twomote, those who are brought to 
+		negative hit points by this Rune rise the next round as undead of equal CR to the dead creature, and attack 
+		the nearest creatures until they are sent back to true death. These undead are not under your control, but 
+		are not protected from your Mind, Thought or Fear runes.}
+		{}
+		{}
+		{}
+		{}
+        {Dead man walking--\begin{flushright}Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}    
+    	\hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{cunning}
+        \cardtypeSigil
+        \cardtitle{Cunning}
+        \cardcontent
+		{The creature or object targeted may be hidden or trapped as a Rune, which cannot move, but is attached to 
+		the Deepcaster, or any object or surface which the target was touching at the Deepcaster's choice. An 
+		unwilling creature is entitled to a Will Save.}
+		{}
+		{}
+		{}	
+		{}
+        {Aaargh!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}    
+   \begin{tikzpicture}
+        \cardbackground{fear}
+        \cardtypeSigil
+        \cardtitle{Fear}
+        \cardcontent
+		{Those who are effected by a Fear Rune are effected by an Intimidate check, with your Intimidate Bonus, plus 
+		your Intelligence, plus your level.}
+		{Creatures with less than half of your level that fail the save against this Rune are rebuked/turned..}
+		{}
+		{}	
+		{}
+        {Yaargh!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}  
+    \hspace{5mm}    
+   \begin{tikzpicture}
+        \cardbackground{shield}
+        \cardtypeSigil
+        \cardtitle{Shield}
+        \cardcontent
+		{You gain a bonus to AC equal to the \xmote\hspace{1pt} for 1d6 turns. Each turn 	afterwards, your benefit 
+		decreases by one, until it reaches $0$.}
+		{You gain damage reduction equal to \xmote.}
+		{You defend against one attack, ability, or spell per turn. This Rune completely takes all damage and 
+		effects of that ability, before fading out of existence. This ability may only be used once before needing 
+		to be cast again.}
+		{}
+		{}
+        {Thou shall not paass!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+   \begin{tikzpicture}
+        \cardbackground{living}
+        \cardtypeSigil
+        \cardtitle{Living}
+        \cardcontent
+		{Any Rune which has this Ability cast on it can move on its own, up to your move speed. This does not 		
+		require any action from you, but if the Rune is a creature or object hidden with the Cunning Rune, it does 
+		require the creature to take a move action. Runes which are Living may not attack unless they are an actual 
+		creature hidden by the Cunning Rune or other means.}
+		{}
+		{}
+		{}	
+		{}
+        {Rise my child!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{antimagic}
+        \cardtypeSigil
+        \cardtitle{Antimagic}
+        \cardcontent
+		{You may detect magic and gain a bonus on any check made to identify magic equal to \xmote.}
+		{You may attempt to remove a known magic effect as per \textit{dispel} magic.}
+		{You designate a certain location or pattern and gain the following benefit: anything that wishes to 
+		activate or use magic must make an opposed caster level check against your class level check or give up the 			spell.}
+		{You may attempt to modify any \xmote\hspace{1pt}aspects of target spell Design instead of removing it.}
+		{}
+        {Any power has it's kryptonite\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+   \begin{tikzpicture}
+        \cardbackground{chimera}
+        \cardtypeSigil
+        \cardtitle{Chimera}
+        \cardcontent
+		{This rune overloads the effects of Transform rune. You can change subject type, but no extraordinary is 
+		acquired.}
+		{You may change target from living to inanimate resulting in a deaf, blind, immobilized and unfeeling 
+		target. If the target needs to breath or eat the GM may want to apply soffocation, dehydration or starvation 
+		rules.}
+		{You can transform target in another beeing with different phase (e.g. gaseous).}
+		{You can change the target in any other living form. The target acquires all of the stats and traits of the 
+		new form, while retaining all of its memories.}
+		{}
+        {WTF is that?\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+	\hspace{5mm}
+ \begin{tikzpicture}
+        \cardbackground{force}
+        \cardtypeDweomer
+        \cardtitle{Element of Force}
+        \cardcontent
+		{When you activate the Force Rune, you deal a number of d6 of cosmic damage equal to your level. The save 	
+		for the Element of Force is a Fortitude Save.}
+		{You resolve your attacks this turn against a creature’s touch AC. This attack is resolved against all 		
+		target's Touch AC.}
+		{Your target is Confused for 1d4 turns.}
+		{Your target becomes unconscious for 1d8 turns. }
+		{}
+        {Magic missile. You can go without\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+ \begin{tikzpicture}
+        \cardbackground{piercing}
+        \cardtypeSigil
+        \cardtitle{Piercing}
+        \cardcontent
+		{You may upgrade a Seeing Rune so that it can look through walls, even those it is carved into. In addition, any Spot/Search/Scry 
+		check made through the Seeing rune get an Intelligence modifier bonus.}
+		{You can see invisible creatures.}
+		{}
+		{}
+		{}
+        {Slamori the one known only by him\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+ \begin{tikzpicture}
+        \cardbackground{transform}
+        \cardtypeSigil
+        \cardtitle{Transform}
+        \cardcontent
+		{Spells using the transform rune change the subject into another form of creature or object the rune is 
+		posed on. The base effect of this rune duplicates the alter self spell.}
+		{You can change the size of the target by one category higher or lower. Any further variation \twomote. 		
+		Targeting objects with hardness increases the cost by \onemote.}
+		{You can change the target in something or someone specific with whom you have familiarity, provided the 
+		subtype remains unchanged.}
+		{}
+		{}
+        {Slamori the one known only by him\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+ \begin{tikzpicture}
+        \cardbackground{repel}
+        \cardtypeSigil
+        \cardtitle{Repel}
+        \cardcontent
+		{Whatever square or Pattern this Rune effects it forces all enemies to make a Will Save in order to enter 
+		or cross the area.}
+		{}
+		{}
+		{}
+		{}
+        {Biohazard ahead\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+	\hspace{5mm}
+ \begin{tikzpicture}
+        \cardbackground{shimmering}
+        \cardtypeSigil
+        \cardtitle{Shimmering}
+        \cardcontent
+		{Those who are effected by this Rune must make a Will Save or be enthralled, as the spell.}
+		{}
+		{}
+		{}
+		{}
+        {Now give me the..err..what was I saying?\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{mind}
+        \cardtypeSigil
+        \cardtitle{Mind}
+        \cardcontent
+		{The creature or creatures affected by this rune move one step toward friendly attitude. In order to gain any benefit from the 	
+		Mind Rune, your target must fail a Will Save.}
+		{If your target is neutral or closer towards friendly, then you may give them one subconscious direction. This direction may not 
+		be to harm them, but may be anything expressed in a single sentence. }
+		{You may attempt to control the mind of a target, as the dominate spell. If you have already successfully targeted her with the 
+		Mind Rune today, but not this effect, the Save DC of your Design increases by 2.}
+		{}
+		{}
+        {Hey honey!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+        \begin{tikzpicture}
+        \cardbackground{pure}
+        \cardtypeSigil
+        \cardtitle{Pure}
+        \cardcontent
+		{Pure runes upgrade Piercing runes. You can \textit{detect magic}, as the spell.} 
+		{You gain a +10 Insight bonus when examining magic effects or items through a Piercing or Seeing Rune.}
+		{When you look through a Pure rune, you gain a constant \textit{true seeing} like effect.}
+		{}
+		{}
+        {(Bells ringing)\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+     \begin{tikzpicture}
+        \cardbackground{image}
+        \cardtypeSigil
+        \cardtitle{Image}
+        \cardcontent
+		{You may create the visual likeness of anything that you can imagine, complete with appropriate sounds. 
+		However, unless you apply the Living Rune to such a creation, it is not able to move. You may not create an 
+		image that fills more 5' cubes than your level, plus your Intelligence Modifier. If you invest additional 
+		motes, you can create an image that fills a number of additional squares equal to your level times the 
+		number of motes you invested into this specific Rune. Motes invested into other Runes do not count, but 
+		those invested into Depths do.}
+		{If in a Design with a Mind rune, you may create the illusion in the mind of a target creature.}	
+		{}
+		{}		
+		{}
+        {Ooh!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+	\hspace{5mm}
+	\begin{tikzpicture}
+        \cardbackground{electricity}
+        \cardtypeSigil
+        \cardtitle{Element of Electricity}
+        \cardcontent
+		{When you activate the Electric Rune, you deal a number of d6 of electricity damage equal to your level. The 
+		save for the Element of Electricity is a Reflex Save.}
+		{Your target is dazed for 1 turn.}
+		{Your target is stunned for 1d4 turns.}
+		{Your target is immobilized for 1d8 turns.}		
+		{}
+        {Thunder!Thunder!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{sound}
+        \cardtypeSigil
+        \cardtitle{Element of Sound}
+        \cardcontent
+		{A Scream Rune deals a number of d6 of sound damage equal to your level.}
+		{Your target is deafened for 1 turn.}
+		{Unattended mundane object shatter. Constructs get 1 additional damage per dice rolled.}
+		{}
+		{}
+        {Yaaaaargh!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{range}
+        \cardtypeSigil
+        \cardtitle{Range}
+        \cardcontent
+		{When you cast this ability upon yourself, or in a Design, you may cast a Rune that reaches up to Long 
+		Range, even if you cannot see your target. If you invest \twomote, your range increases to a number of miles 
+		equal to half your level plus your Intelligence bonus. If you invest an additional \twomote, you may cast to 
+		any object or creature in the world that you can form a visual image of in your mind. Then, any Design which 
+		is created with this Rune may be triggered as a Move Action. }
+		{}
+		{}
+		{}
+		{}
+        {Don't let the darn crow go!Shoot him Ygritte!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{speed}
+        \cardtypeAscend
+        \cardtitle{Speed}
+        \cardcontent
+		{The target of this Ascendance gains an extra Move Action on every turn this rune is active. This Rune lasts 
+		for a number of turns equal to half your class level.}
+		{}
+		{}
+		{}
+		{}
+        {Holy s**t!Let's get outtadaway..\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{tough}
+        \cardtypeAscend
+        \cardtitle{Though}
+        \cardcontent
+		{For any ability based on the Thought Rune, the target gains a Will Save: if they succeed at the will save, 
+		your Motes are expended, but you do not gain any benefits. You may read a creature’s mind and their surface 
+		thoughts, such as what they think of you, their opinions on something, or their visual memory of something 
+		you have mentioned.}
+	    {You can read a creature's deep emotions and motivations. This includes their feelings, their past, their 
+	    knowledge about something you haven't mentioned, or perhaps don't even know about.}
+		{You can predict your target’s entire next turn, and if you choose, after their turn’s dice have been rolled 
+		and you know the results, you can spend a move action to tell your allies what their action will be. This f
+		orces your target to re-roll all dice used in that turn.}
+		{}
+		{}
+        {Ohm..\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \cardbackground{binding}
+        \cardtypeAscend
+        \cardtitle{Binding}
+        \cardcontent
+		{You must cast this Sigil on 2 objects or creatures that have been affected by another rune, including 
+		another rune that is in the same Design as this one. If these two objects or creatures touch each other, 
+		they are bound together and require a Strength check to separate them. This check is equal to 10 plus the 
+		\xmote invested into the Design in which you cast this rune.}
+		{You may bind creatures to a specific plane of existence. In this case the check to break free is based on 
+		Charisma.}
+		{}
+		{}
+		{}
+        {Thou shll not paass!\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{giveform}
+        \cardtypeAscend
+        \cardtitle{Give Form}
+        \cardcontent
+		{You may make incorporeal creatures or illusions physical for a number of turns equal to the number of Motes 
+		invested in the design in which this is cast, to a maximum of your level. In addition, the illusion must be 
+		of a CR less than your level. Alternately, you may grant a creature a bonus to Constitution equal to \xmote
+		in this Rune, or Depths and Patterns applied to this rune, to a maximum of your Intelligence Modifier.}
+		{}
+		{}
+		{}
+		{}
+        {Come into existence little ones\begin{flushright}--Dart Vader, ex-Jedi\end{flushright}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}   
+    \begin{tikzpicture}
+        \cardbackground{mtgback-gray}
+        \cardborder
+    \end{tikzpicture}    
+    
+    
+    
+    
+    
+%home
+%aether
+%carnot
+%battle
+%quickness
+%plan
+%baleful dispel
+%enchant
+%imapctufl
+%dedtiny
+%suspned
+
+
+
+
+%%%% Test-card    
+%%%    \begin{tikzpicture}
+%%%        \carddebug
+%%%        \cardtypeTest
+%%%        \cardtitle{Welcher Schlächter?}
+%%%        \cardcontent{\contentA}{\contentB}
+%%%        \cardprice{$\infty$}
+%%%        \cardborder
+%%%        \cardpower{18/18}
+%%%    \end{tikzpicture}   
+    
+\end{center}
+\end{document}

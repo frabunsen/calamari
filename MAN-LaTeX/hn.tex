@@ -1,0 +1,208 @@
+\documentclass[twocolumn,openany]{scrbook}
+
+% -------------------------------------------------
+% page layout:
+\setlength\parindent{15pt}
+
+\usepackage[a4paper]{geometry}
+\newlength\imargin 	% % geometrie adatte al mono-bi colonna 
+\newlength\omargin
+%\setlength\imargin{.7in}
+%\setlength\omargin{.7in}
+%\geometry{
+%  inner  = \imargin ,
+%  outer  = \omargin ,
+% top    = 1in ,
+% bottom = .7in
+%}
+
+% -------------------------------------------------
+\usepackage{scalefnt}
+
+% -------------------------------------------------
+% colors:
+\usepackage{tikz,xcolor}
+\usetikzlibrary{positioning}
+\definecolor{darkred}{cmyk}{0.0,0.87,0.87,0.50}
+\colorlet{mygray}{black!20}
+
+% -------------------------------------------------
+\usepackage{eso-pic}	% % figure bordo pagina
+
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\ifthispageodd
+	{\includegraphics[width=\paperwidth,height=\paperheight]{bgg.jpg}}
+	{\includegraphics[width=\paperwidth,height=\paperheight]{bg.jpg}}
+	{}
+\vfill
+}}}
+
+% -------------------------------------------------
+% header and footer:
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\renewcommand*\chapterpagestyle{scrheadings}
+\clearscrheadfoot
+
+\newcommand*\logo{%
+\includegraphics[scale=1]{logo.png}
+  }
+  
+\tikzset{
+  logo/.style={
+    color = mygray ,
+    font  = \normalfont\sffamily\Large\bfseries ,
+    inner sep = .25in ,
+    align = center
+  },
+  page/.style={
+    color  = mygray ,
+    fill   = darkred ,
+    font   = \normalfont\sffamily\Huge\bfseries ,
+    minimum size = \omargin-.2in ,
+    yshift = 2in
+  },
+  chapter/.style={
+    color = black ,
+    scale = 1.5,
+    transform shape,
+    font  = \normalfont\sffamily\Huge\bfseries ,
+  }
+}
+
+\ohead{
+\begin{tikzpicture}[remember picture, overlay]
+ % logo:	% % ModernSRD (in alto a DX o SX)
+% \ifthispageodd
+%   {\node[below left,logo] at (current page.north east)} 
+%   {\node[below right,logo] at (current page.north west)}
+%   {\logo} ;
+ % page number:	% % nel boxino rosso al margine (dove io ci vorrei il nome capitolo) 
+\ifthispageodd
+   {\node[left,page] at (current page.east)}
+   {\node[right,page] at (current page.west)}
+   {\thepage} ;
+ % chapter mark:	% % quello che mi interessa
+ \ifthispageodd
+   {\node[anchor=north east,rotate=-90,chapter,scale=0.6] at (current page.east)}
+   {\node[anchor=north west,rotate=90,chapter,scale=0.6] at (current page.west)}
+   {\chaptertitle} ;
+% \ifthispageodd	% % la linea sottile grigia tra testo e nome capitolo in verticale
+%   {
+%     \draw[mygray,very thin]
+%       (current page.south east)++(-.6in,0)--++(0,.6\paperheight) ;
+%   }
+%   {
+%     \draw[mygray,very thin]
+%       (current page.south west)++(.6in,0)--++(0,.6\paperheight) ;
+%   }
+\end{tikzpicture}
+}
+
+% -------------------------------------------------
+% chapter layout:	% % mono colonna o bi colonna alla bisogna
+\usepackage{etoolbox}
+\newbool{schapter}
+\makeatletter
+%\patchcmd\@chapter
+%  {\ifnum \scr@osectarg}
+%  {\boolfalse{schapter}\ifnum \scr@osectarg}
+%  {}{\error}
+\patchcmd\@schapter
+  {\if@twocolumn}
+  {\booltrue{schapter}\if@twocolumn}
+  {\error}
+%\patchcmd\@chapter
+%  {\@topnewpage[\@makechapterhead{#2}]}
+%  {\@topnewpage[\@makechapterhead{#2}]\null\newpage\vspace*{1in}}
+%  {}{\error}
+%\patchcmd\@schapter
+%  {\@topnewpage[\@makeschapterhead{#1}]}
+%  {\@topnewpage[\@makeschapterhead{#1}]\null\newpage\vspace*{1in}}
+%  {}{\error}
+\makeatother
+
+\newcommand\savechapter[1]{\gdef\chaptertitle{#1}} %% Ex titolo del capitolo (due rettangoli rossi e la scritta grigia)
+\newcommand*\chapterbox[1]{%
+  \savechapter{#1}%
+  \begin{tikzpicture}[remember picture, overlay]
+%%  \fill[mygray] (current page.north west) rectangle (current page.south) ;
+%   \draw (current page.north) ++(-0.5in,-1.5in)
+%    node[mygray,fill=white,minimum width=.75\textwidth]
+%       (chapapp)
+%       {\ifbool{schapter}{}{\rlap{\Huge\chapapp\space\thechapter:}}} ;
+%   \node[anchor=north,mygray,fill=darkred!85,inner sep=1em,xshift=-.6in]
+%     at (chapapp.south)
+%     {\scalebox{2.5}{\bfseries\MakeUppercase{#1}\hspace*{.2in}}} ;
+
+  \draw (0,0)	%++(-0.5in,-1.5in)				% % nuovo titolo
+      {\ifbool{schapter}{}{\rlap{\Huge\chapapp\space\thechapter:}}} ;
+   \node[anchor=north,mygray,fill=darkred!85, inner sep=1em,xshift=2in, yshift=0.5in] (chapapp)
+    {\scalebox{2.5}{\bfseries\MakeUppercase{#1}\hspace*{.2in}}} ;
+
+%\draw[fill=w] (0,0)
+% rectangle (\columnwidth,3cm);
+%{\scalebox{2.5}{\bfseries\MakeUppercase{#1}\hspace*{.2in}}};
+
+  \end{tikzpicture}
+}
+\setkomafont{chapter}{\chapterbox}
+
+% -------------------------------------------------
+% section layout:
+\setcounter{secnumdepth}{0}
+\newcommand\sectionrule{%
+  \makebox[0pt][l]{\rule[-.25ex]{\linewidth}{1pt}}}
+\newcommand\sectionformat[1]{%
+  \sffamily\huge\color{darkred}%
+  \sectionrule
+  \hfill\MakeUppercase{#1}}
+\setkomafont{section}{\sectionformat}
+
+% -------------------------------------------------
+\usepackage{lipsum}% dummy text
+
+% -------------------------------------------------
+% automatic tables numbering
+\usepackage{array}
+\newcounter{rowno}
+\setcounter{rowno}{0}
+
+% ------------------------------------------------
+
+
+
+
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+
+\chapter*{Introduzione}
+\lipsum[1-2]
+
+\section{Foo Bar Baz}
+\begin{itemize}
+\item Skill check: Roll below your skill value
+\item Opposed chekcs: Roll below your skill value, but higher than opponents
+\end{itemize}
+
+\chapter{Personaggi}
+\begin{tabular}{>{\stepcounter{rowno}\therowno.}cl}
+\multicolumn{1}{r}{No.} & text \\
+\hline
+ & first  \\
+ & second \\
+ & third  \\
+ & fourth \\
+ & fifth  \\
+\hline
+\end{tabular}
+
+\section{Foo Bar Baz}
+\lipsum[3-11]
+
+\end{document}

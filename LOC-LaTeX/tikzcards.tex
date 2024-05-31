@@ -1,0 +1,183 @@
+%   COMMANDS ZUM ZUSAMMENBAUEN DER KARTEN
+%   ---------------------------------------
+
+
+%%%%%%%%%%%
+% COLORI  %
+%%%%%%%%%%%
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{characterbg}{RGB}{0,100,200}
+\definecolor{abilitybg}{RGB}{80,180,0}
+\definecolor{itembg}{RGB}{200,50,50}
+\definecolor{monsterbg}{RGB}{103,102,51}
+\definecolor{testbg}{RGB}{180,50,150}
+\definecolor{pricebg}{RGB}{230,180,0}
+\definecolor{powerbg}{RGB}{30,30,30}
+\definecolor{content}{RGB}{250,250,245}
+\definecolor{contentbg}{RGB}{255,255,255}
+
+
+
+
+%   TikZ/PGF Settings für die Karten
+\pgfmathsetmacro{\cardwidth}{6}
+\pgfmathsetmacro{\cardheight}{9}
+\pgfmathsetmacro{\imagewidth}{\cardwidth}
+\pgfmathsetmacro{\imageheight}{0.75*\cardheight}
+\pgfmathsetmacro{\stripwidth}{0.7}
+\pgfmathsetmacro{\strippadding}{0.2}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\titley}{\cardheight-\strippadding-1.5*\textpadding-0.5*\stripwidth}
+
+
+%   Formen der einzelnen Kartenelemente/-bestandteile
+\def\shapeCard{(0,0) rectangle (\cardwidth,\cardheight)}
+\def\shapeLeftStripLong{(\strippadding,-0.2) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding-\strippadding-1)}
+\def\shapeLeftStripShort{(\strippadding,\cardheight-\strippadding-1) rectangle (\strippadding+\stripwidth,\cardheight+0.2)}
+\def\shapeRightStripShort{(\cardwidth-\stripwidth-\strippadding,\cardheight-\strippadding-1) rectangle (\cardwidth-\strippadding,\cardheight+0.2)}
+\def\shapeTitleArea{(2*\strippadding+\stripwidth,\cardheight-\strippadding) rectangle (\cardwidth-2*\strippadding-\stripwidth,\cardheight-2*\stripwidth)}
+\def\shapeContentArea{(2*\strippadding+\stripwidth,0.5*\cardheight) rectangle (\cardwidth+0.2,-0.2)}
+
+
+%   Stylings für die Elemente definieren
+\tikzset{
+    %   runde Ecken für die Karten
+    cardcorners/.style={
+        rounded corners=0.2cm
+    },
+    %   runde Ecken für die "Fähnchen"
+    elementcorners/.style={
+        rounded corners=0.1cm
+    },
+    %   Schlagschatten für die "Fähnchen"
+    stripshadow/.style={
+        drop shadow={
+        	%shadow=true,
+            opacity=0.5,
+            color=black
+        }
+    },
+    %   Style für die "Fähnchen"
+    strip/.style={
+        elementcorners,
+        stripshadow
+    },
+    %   Bild für das Kartenmotiv
+    cardimage/.style={
+        path picture={
+            \node[below=-1.5mm] at (0.5*\cardwidth,\cardheight) {
+                \includegraphics[width=\imagewidth cm]{#1}
+            };
+        }
+    },
+}
+
+%   TikZ-Raster
+\newcommand{\carddebug}{padding
+    \draw [step=1,help lines] (0,0) grid (\cardwidth,\cardheight);
+}
+
+%   Rahmen der Karte
+\newcommand{\cardborder}{
+    \draw[lightgray,cardcorners] \shapeCard;
+}
+
+%   Hintergrund der Karte
+\newcommand{\cardbackground}[1]{
+    \draw[cardcorners, cardimage=#1] \shapeCard;
+}
+
+%   Kategorie der Karte
+\newcommand{\cardtype}[5]{
+    %   First we fill the intersecting area
+    %   The \clip command does not allow options, therefore 
+    %   we have to use a scope to set th-0.2e even odd rule.
+    \begin{scope}[even odd rule]
+        %   Define a clipping path. All paths outside shapeCard will
+        %   be cut because the even odd rule is set.
+        \clip[cardcorners] \shapeCard;
+        % Fill shapeLeftStripLong and shapeLeftStripShort.
+        %   Since the even odd rule is set, only the card will be filled.
+        \fill[strip,#1] \shapeLeftStripLong node[rotate=90,above left=0.9mm,font=\normalsize] {
+            \color{white}\uppercase{#2}
+        };
+        \fill[strip,#1] \shapeLeftStripShort;
+        
+            
+%    %%%%%%%%%%%%%% OPZIONALE: secondo cardtype 
+    \ifthenelse{\equal{#4}{}}{}{
+\def\shapeLeftStripMedium{(\strippadding,-0.2) rectangle (\strippadding+\stripwidth,\cardheight-\strippadding-\strippadding-4)}        
+        \fill[strip,#4] \shapeLeftStripMedium node[rotate=90,above left=0.9mm,font=\normalsize] {
+            \color{white}\uppercase{#5}
+        };
+      }
+     %%%%%%%%%%%% FINE OPZIONALE: secondo cardtype 
+    \end{scope}
+    \node at (\strippadding+\stripwidth-0.28,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
+}
+\newcommand{\cardtypeCharacter}{\cardtype{characterbg}{Character}{\hspace{-1mm}\LARGE\ding{95}}{}{}}
+\newcommand{\cardtypeAbility}{\cardtype{abilitybg}{Ability}{\hspace{-1mm}\Large\ding{97}}{}{}}
+\newcommand{\cardtypeItem}{\cardtype{itembg}{Item}{\hspace{-1mm}\LARGE\ding{98}}{}{}}
+\newcommand{\cardtypeMonster}{\cardtype{monsterbg}{Monster}{\hspace{-1mm}\LARGE\ding{90}}{}{}}
+\newcommand{\cardtypeTest}{\cardtype{testbg}{Testcard}{\hspace{-1.4mm}\huge\ding{78}}{red}{Item}}
+
+%   Titel der Karte
+\newcommand{\cardtitle}[1]{
+    %\draw[pattern=soft crosshatch,rounded corners=0.1cm] \shapeTitleArea;
+    \fill[elementcorners,titlebg,opacity=.85] \shapeTitleArea;
+    \node[text width=3.75cm] at (0.5*\cardwidth,\titley) {
+        \begin{center}
+            \color{white}\uppercase{\normalsize #1}
+        \end{center}
+    };
+}
+
+%   Inhalt der Karte
+\newcommand*{\cardcontent}[2]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[elementcorners,contentbg, opacity=0.7] \shapeContentArea;
+    \end{scope}
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding) {
+        %\textit{\glqq\normalsize #1\grqq}
+        \textit{#1}
+    };
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,3) {
+        \vrule width \textwidth height 2pt \\[-2pt]
+        \vspace{0.2cm}
+        {\scriptsize #2}
+    };
+}
+
+
+%   Preis der Karte
+\newcommand{\cardprice}[1]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[strip,pricebg] \shapeRightStripShort;
+    \end{scope}
+    \node at (\cardwidth-0.5*\stripwidth-\strippadding,\titley-0.1) {\color{black} \textbf{#1}};
+}
+
+
+%%%\def\shapeMiaVerticale{(\cardwidth-\strippadding,-0.2) rectangle (\cardwidth-\strippadding-\stripwidth,\cardheight-\imageheight-5*\strippadding)}
+%%%%	Card strenght/defence
+%%%\newcommand{\cardpower}[1]{
+%%%    \begin{scope}[even odd rule]
+%%%        \clip[cardcorners] \shapeCard;
+%%%        \fill[strip,pricebg] \shapeMia;
+%%%    \end{scope}
+%%%   \node at (\cardwidth-0.5*\stripwidth-\strippadding,\cardheight-\titley-0.1) {\color{black} #1};
+%%%}
+
+
+\def\shapeMia{(\cardwidth-2*\stripwidth,\strippadding+\stripwidth) rectangle (\cardwidth+0.2,1.5*\strippadding)}
+%	Card strenght/defence
+\newcommand{\cardpower}[1]{
+    \begin{scope}[even odd rule]
+        \clip[cardcorners] \shapeCard;
+        \fill[strip,powerbg,opacity=1] \shapeMia;
+    \end{scope}
+    \node at (\cardwidth-0.6*\stripwidth-\strippadding,\cardheight-\titley-0.1) {\color{white} \textbf{#1}};
+}
+

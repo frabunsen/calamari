@@ -1,0 +1,216 @@
+\documentclass[11pt,fleqn]{book}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm}
+\usepackage{times}
+\usepackage{capt-of}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{mdframed}
+\usepackage[font={footnotesize}]{subcaption}
+\usepackage[font={small},width=.8\textwidth]{caption}
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,a4paper]{geometry}
+\usepackage[italian]{babel}
+\usepackage{enumitem}
+\setlist{nolistsep} 
+\usepackage{csquotes}
+
+%-------------------------------------------------------------------------
+%TODO licenza mia
+%TODO mettere il preambolo in una classe ort.cls
+
+%-------------------------------------------------------------------------
+\definecolor{color1}{RGB}{150,0,0} % title and sections
+\definecolor{color1}{RGB}{20,79,181} % box background and authors
+\colorlet{com}{black!5}
+\newmdenv[backgroundcolor=com,outerlinecolor=com,linecolor=com,skipbelow=.5\baselineskip plus2pt minus2pt,skipabove=.5\baselineskip plus2pt minus2pt]{com}
+\gdef\ttdefault{cmtt}%
+
+%-------------------------------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= blue,bookmarks=true,bookmarksopen=false,pdftitle={Analyse appliquée},pdfauthor={MArc Pogu}}
+% paramètres de compression pdf
+\pdfminorversion=5
+\pdfobjcompresslevel=6 
+\pdfcompresslevel=9
+
+%-------------------------------------------------------------------------
+\usepackage{titletoc}
+\contentsmargin{0cm}
+\titlecontents{chapter}[1cm]
+{\addvspace{10pt}\large\sffamily\bfseries}%\llap{\chaptername\ }
+{\color{color1!60}\contentslabel[\Large\thecontentslabel]{1cm}\color{color1}}
+{}  
+{\color{color1!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}%  
+  
+%\titlecontents*{chapter}[0cm]
+%{\addvspace{10pt}\Huge\sffamily\bfseries}%\llap{\chaptername\ }
+%{\color{color1}}
+%{}  
+%{\color{color1!60}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage}%    
+  
+\titlecontents{section}[1cm]
+  {\addvspace{5pt}\bfseries}
+  {\contentslabel[\thecontentslabel]{1cm}}
+  {}
+  {\hfill\color{black}\thecontentspage}
+  []
+\titlecontents{subsection}[1cm]
+  {\addvspace{-1pt}\small\strut\vphantom{Éq}}
+  {\contentslabel[\thecontentslabel]{1cm}}
+  {}
+  {\;\titlerule*[.5pc]{.}\;\thecontentspage}
+  []  
+   
+\usepackage{fancyhdr}
+% fancyhdr parameters
+\newlength\debordement\setlength\debordement{0pt}
+\pagestyle{fancy}
+\fancyheadoffset{\debordement}
+\fancyfootoffset{\debordement}
+\renewcommand{\chaptermark}[1]{\markboth{\normalfont\normalsize\bfseries #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\normalfont\normalsize\thesection\hspace{5pt}#1}{}%
+%\markright{\normalfont\normalsize\thesection\hspace{5pt}#1}{}
+}
+\fancyhf{} \fancyhead[LE,RO]{\normalfont\normalsize\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\addtolength{\headheight}{2.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}}
+\makeatletter
+							  
+% enlève l'entête des pages de fin de chapitre si nombre de pages impair
+\renewcommand{\cleardoublepage}{%
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi
+}
+
+%-------------------------------------------------------------------------
+\makeatletter%
+% définition de l'entête des chapitres
+\newcommand{\thechapterimage}{}%
+\newcommand{\chapterimage}[1]{\renewcommand{\thechapterimage}{#1}}%
+\def\thechapter{\arabic{chapter}}%
+\def\@makechapterhead#1{%
+\thispagestyle{empty}%
+  {\centering \normalfont\sffamily%
+    \ifnum \c@secnumdepth >\m@ne%
+      \if@mainmatter%
+	  \startcontents%
+	  \begin{tikzpicture}[remember picture,overlay]%
+         \node at (current page.north west)%
+         {\begin{tikzpicture}[remember picture,overlay]%
+		   \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+		   %\draw[fill=color1!25,color=color1!25,opacity=.6] (1cm,0) rectangle (8cm,-8cm);
+		   \node[inner sep=6pt,anchor=north west,fill=color1!25,color=color1!25,text opacity=1, fill opacity=.6] at (1cm,-.5cm) {\parbox[t][][t]{7.3cm}{\color{black}\huge\bfseries Capitolo\ \thechapter\flushleft\vspace*{-7pt}\printcontents{l}{1}{\setcounter{tocdepth}{2}}}};
+		   \draw[anchor=east] (20cm,-9cm) node [fill=color1!25]{\strut\Huge\sffamily\bfseries\textcolor{black}{#1\vphantom{plÉ}}};
+       \end{tikzpicture}};
+      \end{tikzpicture}}\par\vspace*{230\p@}%
+}
+\def\@makeschapterhead#1{%
+\thispagestyle{empty}%
+  {\centering \normalfont\sffamily%
+    \ifnum \c@secnumdepth >\m@ne%
+      \if@mainmatter%
+	  \startcontents%
+	  \begin{tikzpicture}[remember picture,overlay]%
+         \node at (current page.north west)%
+         {\begin{tikzpicture}[remember picture,overlay]%
+		   \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{\thechapterimage}};
+		   \draw[anchor=east] (20cm,-9cm) node [fill=color1!25]{\Huge\sffamily\bfseries\textcolor{black}{#1\vphantom{plÉ}}};
+       \end{tikzpicture}};
+      \end{tikzpicture}}\par\vspace*{230\p@}%
+}%
+\renewcommand{\@seccntformat}[1]{\llap{\csname the#1\endcsname\hspace*{7pt}}}
+\makeatother
+
+%-------------------------------------------------------------------------
+% définition de la page de titre
+\renewcommand*{\title}{\begingroup%
+\thispagestyle{empty}\mbox{}%
+\AddToShipoutPicture*{\includegraphics{front}}%
+\newpage\mbox{}\thispagestyle{empty}%
+\vspace*{2cm}
+
+%-------------------------------------------------------------------------
+%\vfill\normalsize\selectfont		 % % Pagina della licenza
+%\noindent École Centrale de Nantes --- 2012\\
+%Ce document est sous licence Creative Commons 3.0 France:
+%\begin{itemize}
+%\item paternité;
+%\item pas d'utilisation commerciale;
+%\item partage des conditions initiales à l'identique;
+%\end{itemize}
+%\url{http://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr}\\[8pt]
+%\includegraphics[width=5cm]{icon/IconTog}
+%\endgroup%
+%\newpage
+}%  
+%%\setlength{\jot}{0.1\jot}
+
+%-------------------------------------------------------------------------
+\fancyfoot[C]{		% % aggiunta per numero di pagina spostabile e sovrapposto a figura (o box)  
+\begin{picture}(100,100)
+   \put(270,70){\framebox{\phantom{\rule{10pt}{10pt}}}} %Dummy box in place of an image.
+   %\put(270,70){\includegraphics[scale=0.2]{pagenum.png}}
+   \put(275,70){\hbox{\bfseries\thepage}}
+\end{picture}  
+}
+
+%-------------------------------------------------------------------------
+\usepackage{gantt} % % {righe}{colonne}
+
+%-------------------------------------------------------------------------
+\begin{document}
+%\setlength{\abovedisplayskip}{5pt plus 2pt minus 1pt}%
+%\setlength{\belowdisplayskip}{\abovedisplayskip}%
+%\setlength{\abovecaptionskip}{10pt}%
+%\setlength{\belowcaptionskip}{0pt}%
+
+\title
+\pagestyle{empty}
+\chapterimage{index-cap}%
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\cleardoublepage
+\pagestyle{fancy}%
+\chapterimage{chap1-cap}%
+\chapter{A}
+\section{B}
+\subsection{C}
+
+\lipsum
+\begin{gantt}{7}{12}
+    \begin{ganttitle}
+      \titleelement{Jan}{1}
+      \titleelement{Feb}{1}
+      \titleelement{Mar}{1}
+      \titleelement{Apr}{1}
+      \titleelement{May}{1}
+      \titleelement{Jun}{1}
+      \titleelement{Jul}{1}
+      \titleelement{Aug}{1}
+      \titleelement{Sep}{1}
+      \titleelement{Oct}{1}
+      \titleelement{Nov}{1}
+      \titleelement{Dec}{1}
+    \end{ganttitle}
+    \ganttbar{Semina}{0}{2} % % {inizio}{durata}
+    \ganttbarcon{Raccolta}{2}{4}
+  \end{gantt}
+  
+
+\end{document}
+

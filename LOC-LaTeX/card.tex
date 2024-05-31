@@ -1,0 +1,144 @@
+\documentclass[a4paper,landscape]{article}
+
+
+%%%%%%%%%%%%%%%
+% GEOMETRIA	  %
+%%%%%%%%%%%%%%%
+\usepackage[margin=6mm,top=5mm]{geometry}
+
+%%%%%%%%%%%%%%%
+% LINGUA	  %
+%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+%\usepackage[german]{babel}
+
+%%%%%%%%%
+% TESTO	%
+%%%%%%%%%
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%%%%%%%
+% TIKZ	%
+%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+
+\usepackage{ifthen}
+
+%%%%%%%%%
+% DING	%
+%%%%%%%%%
+\usepackage{pifont}
+
+
+\input{tikzcards.tex}
+
+%   Dummy-Contents
+\newcommand{\contentA}{Neunmalkluges Zitat\\mit Bezug zur Karte von einer fiktiven Figur.}
+\newcommand{\contentB}{Auswirkungen:\\[5pt]Ziehe 2 Karten, nimm 3 Gold, lege alles ab, lauf weg …}
+
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+
+%   V-Space-Korrektur bei langen Titeln
+%   \cardtitle{\vspace{-5mm}SEHR LANGER TITEL}
+%%
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/jason-l-carr.jpg}
+        \cardtypeItem
+        \cardtitle{Tombarolo}
+        \cardcontent{C'è polvere quà dentro}{\contentB}
+        \cardprice{5}
+        \cardpower{0/1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/SteamPunk-StarWars.jpg}
+        \cardtypeAbility
+        \cardtitle{Der Wächter}
+        \cardcontent{Keine Sorge, ich mache es lang und äußerst schmerzhaft für dich.}{\contentB}
+        \cardprice{35}
+		\cardpower{4/1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Magicka_Vietnam_Poster_JPG.jpg}
+        \cardtypeCharacter
+        \cardtitle{Mächtiger Schlächter}
+        \cardcontent{Eye, Cäpt'n. Diese Landradd'n werden wir über die Planken schicken!}{\contentB}
+        \cardprice{435}
+        \cardpower{2/2}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/alexander-nanitchkov.jpg}
+        \cardtypeTest
+        \cardtitle{Schlechter Wächter}
+        \cardcontent{Sei Gast in meinem bescheidenen Domizil.}{\contentB}
+        \cardprice{$\infty$}
+        \cardpower{1/3}
+        \cardborder
+    \end{tikzpicture}
+
+    \vspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/c-j-bloomer.jpg}
+        \cardtypeItem
+        \cardtitle{Schmächtiger Wächter}
+        \cardcontent{Miau.}{\contentB}
+        \cardprice{5}
+        \cardpower{1/2}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/david-chen.jpg}
+        \cardtypeAbility
+        \cardtitle{Gebrechlicher Schlächter}
+        \cardcontent{\contentA}{\contentB}
+        \cardprice{35}
+        \cardpower{1/1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/Snake-queen.jpg}
+        \cardtypeMonster
+        \cardtitle{Gerechter Wächter}
+        \cardcontent{\contentA}{\contentB}
+        \cardprice{435}
+        \cardpower{3/3}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+        \begin{tikzpicture}
+        \cardbackground{/home/sensi/Pictures/Fantasy/Characters/michael_whelan__stormbringer.jpg}
+        \cardtypeCharacter
+        \cardtitle{Elric of Melnibon\'{e}}
+        \cardcontent{We would all be better off dead, useless eaters of the lotus that we are}{\contentB}
+        \cardprice{999}
+        \cardpower{3/6}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    
+%%%% Test-card    
+%%%    \begin{tikzpicture}
+%%%        \carddebug
+%%%        \cardtypeTest
+%%%        \cardtitle{Welcher Schlächter?}
+%%%        \cardcontent{\contentA}{\contentB}
+%%%        \cardprice{$\infty$}
+%%%        \cardborder
+%%%        \cardpower{18/18}
+%%%    \end{tikzpicture}   
+    
+\end{center}
+\end{document}
